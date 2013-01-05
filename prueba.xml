@@ -15,7 +15,7 @@
 	border-bottom: 1px solid #000;
 }
 .contenedor_ahorcado{
-	background-image: url("../imagenes/baseahorcado.png");
+	background-image: url("https://raw.github.com/CharlyMcFly/downloads/tree/master/ahorcado2/imagenes/baseahorcado.png");
 	height: 200px;
 	width: 180px;
 }
@@ -188,7 +188,7 @@ h3{
 }
 /* Área ahorcado*/
 .ContenedorAhorcado {
-	background: url("../imagenes/Base.png") no-repeat scroll 0 0 transparent;
+	background: url("https://raw.github.com/CharlyMcFly/downloads/tree/master/ahorcado2/imagenes/Base.png") no-repeat scroll 0 0 transparent;
 	display: block;
 	height: 315px;
 	margin: 10px auto;
@@ -196,7 +196,7 @@ h3{
 	width: 200px;
 }
 .Cabeza_{
-	background: url("../imagenes/Cabeza.png") no-repeat scroll 0 0 transparent;
+	background: url("https://raw.github.com/CharlyMcFly/downloads/tree/master/ahorcado2/imagenes/Cabeza.png") no-repeat scroll 0 0 transparent;
 	height: 60px;
 	left: 110px;
 	position: absolute;
@@ -204,7 +204,7 @@ h3{
 	width: 55px;	
 }
 .Tronco_{
-	background: url("../imagenes/Tronco.png") no-repeat scroll 0 0 transparent;
+	background: url("https://raw.github.com/CharlyMcFly/downloads/tree/master/ahorcado2/imagenes/Tronco.png") no-repeat scroll 0 0 transparent;
 	height: 80px;
 	left: 120px;
 	position: absolute;
@@ -213,7 +213,7 @@ h3{
 	z-index: 1;
 }
 .BrazoDerecho_{
-    background: url("../imagenes/BrazoDerecho.png") no-repeat scroll 0 0 transparent;
+    background: url("https://raw.github.com/CharlyMcFly/downloads/tree/master/ahorcado2/imagenes/BrazoDerecho.png") no-repeat scroll 0 0 transparent;
 	height: 50px;
 	left: 90px;
 	position: absolute;
@@ -221,7 +221,7 @@ h3{
 	width: 50px;
 }
 .BrazoIzquierdo_{
-    background: url("../imagenes/BrazoIzquierdo.png") no-repeat scroll 0 0 transparent;
+    background: url("https://raw.github.com/CharlyMcFly/downloads/tree/master/ahorcado2/imagenes/BrazoIzquierdo.png") no-repeat scroll 0 0 transparent;
 	height: 50px;
 	left: 152px;
     position: absolute;
@@ -229,7 +229,7 @@ h3{
 	width: 50px;
 }
 .PieDerecho_{
-    background: url("../imagenes/PieDerecho.png") no-repeat scroll 0 0 transparent;
+    background: url("https://raw.github.com/CharlyMcFly/downloads/tree/master/ahorcado2/imagenes/PieDerecho.png") no-repeat scroll 0 0 transparent;
 	height: 65px;
     left: 120px;
     position: absolute;
@@ -237,7 +237,7 @@ h3{
     width: 50px;
 }
 .PieIzquierdo_{
-    background: url("../imagenes/PieIzquierdo.png") no-repeat scroll 0 0 transparent;
+    background: url("https://raw.github.com/CharlyMcFly/downloads/tree/master/ahorcado2/imagenes/PieIzquierdo.png") no-repeat scroll 0 0 transparent;
 	height: 65px;
     left: 150px;
     position: absolute;
