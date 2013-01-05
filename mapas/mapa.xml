@@ -96,11 +96,10 @@ a:link {color:#000000;}
       <script src="//hangoutsapi.talkgadget.google.com/hangouts/_/api/hangout.js?v=1.2"></script>
 
       <link rel="stylesheet" type="text/css" href="https://raw.github.com/gelypam/HangoutTest/master/css/estilos.css" />  
-      <script type="text/javascript" src="https://raw.github.com/gelypam/HangoutTest/master/js/jquery-1.7.1.min.js"></script>
-      <script type="text/javascript" src="https://raw.github.com/gelypam/HangoutTest/master/js/funciones.js"></script>
+      <script type="text/javascript" src="https://raw.github.com/CharlyMcFly/downloads/master/mapaConceptos5/js/knockout-2.1.0.js"></script>
 
       <!-- application code -->
-      <div class="principal">
+  <div class="principal">
       <!--<div id="canvas-container" style="height: 2000px;">
           <div id="drawing-area" class="no-select" style="width: 1000px; height: 2000px;">-->
             <script type="text/html" id="node">
@@ -159,6 +158,7 @@ a:link {color:#000000;}
       var root = document.getElementById('root');
           root.focus();
     </script>
+    
     ]]>
   </Content>
 </Module>
