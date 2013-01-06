@@ -252,9 +252,9 @@ h3{
 </style>
       <script src="//hangoutsapi.talkgadget.google.com/hangouts/_/api/hangout.js?v=1.2"></script>
 
-      
+ 
       <script type="text/javascript" src= "https://raw.github.com/CharlyMcFly/downloads/master/ahorcado2/js/jquery-1.7.1.min.js"></script>
-      <script type="text/javascript" src="https://raw.github.com/CharlyMcFly/downloads/master/ahorcado2/js/funciones.js"></script>
+      <script type="text/javascript" src="https://raw.github.com/md0345/Hangouts/master/js/funciones.js"></script>
 
       <!-- application code -->
 	<div class="principal">
