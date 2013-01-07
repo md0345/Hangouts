@@ -274,9 +274,9 @@ var longitud = 0;
 function CargaPreguntas(){
 	//Recupero una pregunta aleatoria de la BD 
 	var preg = gapi.hangout.data.getValue('pregunta');
-		alert("----"+preg);
+		
 		if(typeof preg=="undefined"){
-		alert("entro");
+		
 		 $.getJSON('http://metaversoeducativo.net/sisFH/msicu/php/servicioPreguntas.php', function(data) {
 		 var palabra = "";
 		   	$.each(data.temario, function(indice, valor) {
@@ -334,7 +334,7 @@ function ValidaLetra(li){
 
 	//Obtengo la posicion de letra elegida en la palabra a adivinar
 	var arrayRespuesta = window.respuesta.split("");
-	alert("Arrarj--"+arrayRespuesta);
+	
 	var posiciones = new Array();
 	var j = 0;
 	for(i=0; i<window.longitud; i++){
@@ -345,9 +345,8 @@ function ValidaLetra(li){
 		}
 	}
 
-
 	resp = posiciones == "" ? -1 : posiciones;
-
+	alert("resp--"+resp);
 	//Si la letra existe dentro de la palabra
 	if(resp != -1){
 		pos = resp.length;
