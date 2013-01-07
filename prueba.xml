@@ -283,13 +283,22 @@ var pregunta =gapi.hangout.data.getValue('pregunta');
 		   		//Genero los espacios en blanco de acuerdo al número de letras de la respuesta
 		 		for(i=0; i<longitud; i++){
 		 			palabra += "<span><input type='text' name='l"+i+"' id='l"+i+"'></span>" 
-		 		}}
+		 		}
 		 		$("#Palabra").append(palabra);
 		 		gapi.hangout.data.setValue("palabra",palabra);
 		 		$("#Pregunta").append(valor.pregunta);
 		 		gapi.hangout.data.setValue("pregunta",valor.pregunta);
 		 		});
 		 		});
+		 }else{
+				$("#Palabra").append(palabra);
+		 		gapi.hangout.data.setValue("palabra",gapi.hangout.data.getValue('palabra'));
+		 		$("#Pregunta").append(gapi.hangout.data.getValue('pregunta'));
+		 		gapi.hangout.data.setValue("pregunta",valor.pregunta);
+		 		});
+		 
+
+		 }
 }
 
 var abecedario = new Array();
