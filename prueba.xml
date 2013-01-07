@@ -308,9 +308,10 @@ function generaLetras(){
 function myEventHandlers(){
 	//gapi.hangout.data.onStateChanged.add();
 }
+
 gapi.hangout.data.onStateChanged.add(function(stateChangeEvent) {
          aa();
-        });
+});
 
 function ValidaLetra(li){
 	//Recupero el valor de la letra que escribió el jugador
@@ -376,7 +377,7 @@ var state = gapi.hangout.data.getState();
 $.each(state,function(indice,valor){
 $("#l"+indice).val(valor);
 });
-CargaPreguntas();
+//CargaPreguntas();
 //ValidaGanado();
 }
 
