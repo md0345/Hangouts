@@ -250,10 +250,11 @@ h3{
 }
 
 </style>
-      <script src="https://hangoutsapi.talkgadget.google.com/hangouts/_/api/hangout.js?v=1.2"></script> 
+      <script src="//hangoutsapi.talkgadget.google.com/hangouts/_/api/hangout.js?v=1.2"></script>
       <script type="text/javascript" src= "https://raw.github.com/CharlyMcFly/downloads/master/ahorcado2/js/jquery-1.7.1.min.js"></script>
       
       <script type="text/javascript">
+
 function init(){
 aler("aaaa");
 	gapi.hangout.onApiReady.add(function(){
@@ -401,7 +402,6 @@ function DibujaAhorcado(contador){
 	}
 }
 
-document.addEventListener("DOMContentLoaded",init)
       </script>
 
       <!-- application code -->
