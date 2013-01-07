@@ -253,6 +253,21 @@ h3{
       <script src="https://hangoutsapi.talkgadget.google.com/hangouts/_/api/hangout.js?v=1.2"></script> 
       <script type="text/javascript" src= "https://raw.github.com/CharlyMcFly/downloads/master/ahorcado2/js/jquery-1.7.1.min.js"></script>
       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
       <script type="text/javascript">
 function init(){
 	gapi.hangout.onApiReady.add(function(){
@@ -265,13 +280,6 @@ function init(){
 });
 }
 
-function init2(){
-	sessionStorage.setItem("palabra",0);
-	sessionStorage.setItem("contador",0);
-	generaLetras();
-	CargaPreguntas()
-
-}
 
 var respuesta = "";
 var longitud = 0;
@@ -407,6 +415,33 @@ function DibujaAhorcado(contador){
 document.addEventListener("DOMContentLoaded",init)
       </script>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
       <!-- application code -->
 	<div class="principal">
 		<div class="JuegoAhorcado">
@@ -418,7 +453,8 @@ document.addEventListener("DOMContentLoaded",init)
 						<ul class="Azul" id="letras"></ul>
 					</div>
 					<div class="Palabra" id="Palabra"></div>
-				<div id="botonRes" class="btn" style="display:none;"><a href="#" data-bind="click: init2">Jugar de nuevo</a></div>	
+				<div id="botonRes" class="btn" style="display:none;">
+					<a href="javascript:location.reload()">Jugar de nuevo</a>
 				</div>
 				<div class="ColumnaDos">
 					<div id="monito" class="ContenedorAhorcado">
