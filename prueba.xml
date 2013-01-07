@@ -282,10 +282,12 @@ function CargaPreguntas(){
 		 		for(i=0; i<longitud; i++){
 		 			palabra += "<span><input type='text' name='l"+i+"' id='l"+i+"'></span>" 
 		 		}
-		   		$("#Palabra").append(palabra);
+		 		$("#Palabra").append(palabra);
+		 		gapi.hangout.data.setValue("palabra",palabra);
 		 		$("#Pregunta").append(valor.pregunta);
-		   	});
-		 });
+		 		gapi.hangout.data.setValue("pregunta",valor.pregunta);
+		 		});
+		 		});
 }
 
 var abecedario = new Array();
@@ -306,6 +308,10 @@ function generaLetras(){
 function myEventHandlers(){
 	//gapi.hangout.data.onStateChanged.add();
 }
+gapi.hangout.data.onStateChanged.add(function(stateChangeEvent) {
+         aa();
+        });
+
 function ValidaLetra(li){
 	//Recupero el valor de la letra que escribió el jugador
 	var letraIngresada = String(li);
@@ -322,6 +328,8 @@ function ValidaLetra(li){
 			j++;
 		}
 	}
+
+
 	resp = posiciones == "" ? -1 : posiciones;
 
 	//Si la letra existe dentro de la palabra
