@@ -255,16 +255,15 @@ h3{
       
       <script type="text/javascript">
 
-function init(){
-aler("aaaa");
-	gapi.hangout.onApiReady.add(function(){
+	$(document).on("ready", function(){
 	myEventHandlers();
-	sessionStorage.setItem("palabra",0);
-	sessionStorage.setItem("contador",0);
-	generaLetras();
-	CargaPreguntas()
-});
-}
+		sessionStorage.setItem("palabra",0);
+		sessionStorage.setItem("contador",0);
+		generaLetras();
+		CargaPreguntas()
+	});
+
+
 
 var respuesta = "";
 var longitud = 0;
