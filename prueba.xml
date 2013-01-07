@@ -270,8 +270,8 @@ var longitud = 0;
 
 function CargaPreguntas(){
 	//Recupero una pregunta aleatoria de la BD 
-		var state = gapi.hangout.data.getState();
-		alert(state);
+		var preg = gapi.hangout.data.getValue('pregunta');
+		alert(preg);
 		 $.getJSON('http://metaversoeducativo.net/sisFH/msicu/php/servicioPreguntas.php', function(data) {
 		 	
 		 var palabra = "";
