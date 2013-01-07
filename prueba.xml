@@ -277,6 +277,7 @@ function CargaPreguntas(){
 	var preg = gapi.hangout.data.getValue('pregunta');
 		alert("----"+preg);
 		if(preg=='Cargando'){
+		alert("entro");
 		 $.getJSON('http://metaversoeducativo.net/sisFH/msicu/php/servicioPreguntas.php', function(data) {
 		 var palabra = "";
 		   	$.each(data.temario, function(indice, valor) {
@@ -297,9 +298,9 @@ function CargaPreguntas(){
 		 }
 		 else{
 		 		$("#Palabra").empty();
-		 		$("#Palabra").append(gapi.hangout.data.getValue('palabra'););
+		 		$("#Palabra").append(gapi.hangout.data.getValue('palabra'));
 		 		$("#Pregunta").empty();
-		 		$("#Pregunta").append(gapi.hangout.data.getValue('pregunta'););
+		 		$("#Pregunta").append(gapi.hangout.data.getValue('pregunta'));
 		 }
 }
 
