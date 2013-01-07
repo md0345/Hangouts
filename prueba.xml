@@ -259,7 +259,8 @@ function init(){
 	//myEventHandlers();
 	sessionStorage.setItem("palabra",0);
 	sessionStorage.setItem("contador",0);
-	gapi.hangout.data.setValue("pregunta","");
+	var vacio="";
+	gapi.hangout.data.setValue("pregunta",vacio);
 	generaLetras();
 	CargaPreguntas()
 });
