@@ -253,7 +253,6 @@ h3{
       <script src="https://hangoutsapi.talkgadget.google.com/hangouts/_/api/hangout.js?v=1.2"></script> 
       <script type="text/javascript" src= "https://raw.github.com/CharlyMcFly/downloads/master/ahorcado2/js/jquery-1.7.1.min.js"></script>
       
-
       <script type="text/javascript">
 function init(){
 	gapi.hangout.onApiReady.add(function(){
@@ -262,7 +261,6 @@ function init(){
 	sessionStorage.setItem("contador",0);
 	generaLetras();
 	CargaPreguntas()
-	
 });
 }
 
@@ -354,7 +352,6 @@ function ValidaGanado(){
 	if(sessionStorage.getItem("palabra") == window.longitud){
 		$("#ContenedorAbecedario").hide();
 		$("#resultado").show();
-		$("#botonRes").show();
 		$("#resultado").html("Ganaste :)");
 	}
 }
@@ -386,7 +383,6 @@ function DibujaAhorcado(contador){
 			$("#piederecho").show();
 			$("#ContenedorAbecedario").hide();
 			$("#resultado").show();
-			$("#botonRes").show();
 			$("#resultado").html("Perdiste :(");
 			var str = window.respuesta.split("");
 			for(i=0; i<window.longitud; i++){
@@ -400,18 +396,17 @@ function DibujaAhorcado(contador){
 document.addEventListener("DOMContentLoaded",init)
       </script>
 
-   <!-- application code -->
+      <!-- application code -->
 	<div class="principal">
 		<div class="JuegoAhorcado">
 			<div class="ContenedorJuego">
-					
 				<div id="Pregunta" class="Pregunta"></div>
 				<div class="ColumnaUno">
 					<div id="ContenedorAbecedario" class="ContenedorAbecedario">
 						<ul class="Azul" id="letras"></ul>
 					</div>
 					<div class="Palabra" id="Palabra"></div>
-				
+				</div>
 				<div class="ColumnaDos">
 					<div id="monito" class="ContenedorAhorcado">
 						<div id="cabeza" class="Cabeza_" style="display:none;"></div>
@@ -423,10 +418,7 @@ document.addEventListener("DOMContentLoaded",init)
 					</div>
 				</div>
 			</div>
-			<div id="resultado" class="Resultado" style="display:none;"></div>
-			<!-- <div id="botonRes" class="btn" style="display:none;">
-					<a href="javascript:location.reload();">Jugar de nuevo</a>
-				</div> -->
+			<div id="resultado" class="Resultado" style="display:none;"></div>	
 		</div>
 	</div>
     
