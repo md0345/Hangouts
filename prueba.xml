@@ -410,11 +410,8 @@ function DibujaAhorcado(contador){
 	}
 }
 
-$("#bttn").on("click",aa);
-
 document.addEventListener("DOMContentLoaded",init);
       </script>
-
       <!-- application code -->
 	<div class="principal">
 		<div class="JuegoAhorcado">
@@ -425,7 +422,6 @@ document.addEventListener("DOMContentLoaded",init);
 						<ul class="Azul" id="letras"></ul>
 					</div>
 					<div class="Palabra" id="Palabra"></div>
-				<button id="bttn">aaa</button>
 				</div>
 				<div class="ColumnaDos">
 					<div id="monito" class="ContenedorAhorcado">
