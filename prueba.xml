@@ -263,7 +263,7 @@ function init(){
 	gapi.hangout.data.setValue("pregunta",vacio);
 	alert(gapi.hangout.data.getValue('pregunta'));
 	generaLetras();
-	//CargaPreguntas()
+	CargaPreguntas()
 });
 }
 
@@ -430,8 +430,12 @@ gapi.hangout.onAppVisible.add(function() {
          CargaPreguntas();
 });
 
-document.addEventListener("DOMContentLoaded",init);
-
+//document.addEventListener("DOMContentLoaded",init);
+gapi.hangout.onApiReady.add(function(){
+	init();
+}
+  
+)
 
       </script>
       <!-- application code -->
