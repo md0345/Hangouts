@@ -368,6 +368,7 @@ var state = gapi.hangout.data.getState();
 alert("hola");
 $.each(state,function(indice,valor){
 	$("#l"+indice).append(valor);
+	alert("estoyDentro");
 });
 alert("lohice");
 }
