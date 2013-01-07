@@ -333,7 +333,7 @@ function ValidaLetra(li){
 			sessionStorage.setItem("palabra",contPalabra);
 			
 			$("#l"+resp[i]).val(letraIngresada);
-			var eeee= ("#l"+resp[i]).toString();
+			var eeee= (resp[i]).toString();
 
 			//GAPI
 			gapi.hangout.data.setValue(eeee,letraIngresada);
@@ -362,6 +362,17 @@ function ValidaGanado(){
 		$("#resultado").html("Ganaste :)");
 	}
 }
+<!-- 
+function aa(){
+	var ttt= new Array();
+	ttt= gapi.hangout.data.getState();
+	var logitud=ttt.length;
+	for (i = 0; i <logitud; i++){
+
+
+	}
+}
+ -->
 
 function DibujaAhorcado(contador){
 	switch(contador){
