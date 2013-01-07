@@ -416,10 +416,12 @@ $("#l"+indice).val(valor);
 //CargaPreguntas();
 //ValidaGanado();
 }
+
 gapi.hangout.data.onStateChanged.add(function(stateChangeEvent) {
          aa();
 });
-gapi.hangout.data.onParticipantsAdded.add(function() {
+
+gapi.hangout.onAppVisible.add(function() {
          CargaPreguntas();
 });
 
