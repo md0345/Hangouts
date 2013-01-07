@@ -286,6 +286,7 @@ function CargaPreguntas(){
 		 		for(i=0; i<longitud; i++){
 		 			palabra += "<span><input type='text' name='l"+i+"' id='l"+i+"'></span>" 
 		 		}
+		 		gapi.hangout.data.setValue("respuesta",valor.respuesta);
 		 		$("#Palabra").empty();
 		 		$("#Palabra").append(palabra);
 		 		gapi.hangout.data.setValue("palabra",palabra);
@@ -296,6 +297,7 @@ function CargaPreguntas(){
 		 		});
 		 }
 		 else{
+		 window.respuesta = gapi.hangout.data.getValue('respuesta');
 		 		$("#Palabra").empty();
 		 		$("#Palabra").append(gapi.hangout.data.getValue('palabra'));
 		 		$("#Pregunta").empty();
