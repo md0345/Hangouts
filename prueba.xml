@@ -250,20 +250,19 @@ h3{
 }
 
 </style>
-      <script src="//hangoutsapi.talkgadget.google.com/hangouts/_/api/hangout.js?v=1.2"></script>
+      <script src="https://hangoutsapi.talkgadget.google.com/hangouts/_/api/hangout.js?v=1.2"></script> 
       <script type="text/javascript" src= "https://raw.github.com/CharlyMcFly/downloads/master/ahorcado2/js/jquery-1.7.1.min.js"></script>
       
       <script type="text/javascript">
-
-	$(document).on("ready", function(){
-	myEventHandlers();
-		sessionStorage.setItem("palabra",0);
-		sessionStorage.setItem("contador",0);
-		generaLetras();
-		CargaPreguntas()
-	});
-
-
+function init(){
+	gapi.hangout.onApiReady.add(function(){
+	//myEventHandlers();
+	sessionStorage.setItem("palabra",0);
+	sessionStorage.setItem("contador",0);
+	generaLetras();
+	CargaPreguntas()
+});
+}
 
 var respuesta = "";
 var longitud = 0;
@@ -313,7 +312,9 @@ function generaLetras(){
 	});
 }
 
-
+function myEventHandlers(){
+	//gapi.hangout.data.onStateChanged.add();
+}
 function ValidaLetra(li){
 	//Recupero el valor de la letra que escribió el jugador
 	var letraIngresada = String(li);
@@ -401,6 +402,7 @@ function DibujaAhorcado(contador){
 	}
 }
 
+document.addEventListener("DOMContentLoaded",init)
       </script>
 
       <!-- application code -->
