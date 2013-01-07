@@ -292,12 +292,7 @@ var preg =gapi.hangout.data.getValue('pregunta');
 		 		gapi.hangout.data.setValue("pregunta",valor.pregunta);
 		 		});
 		 		});
-	}else{
-				$("#Pregunta").empty();
-		 		$("#Pregunta").append(gapi.hangout.data.getValue('pregunta'));
-				$("#Palabra").empty();
-		 		$("#Palabra").append(gapi.hangout.data.getValue('palabra'));
-		}
+	}
 }
 
 var abecedario = new Array();
