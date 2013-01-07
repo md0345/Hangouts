@@ -352,6 +352,7 @@ function ValidaGanado(){
 	if(sessionStorage.getItem("palabra") == window.longitud){
 		$("#ContenedorAbecedario").hide();
 		$("#resultado").show();
+		$("#botonRes").show();
 		$("#resultado").html("Ganaste :)");
 	}
 }
@@ -383,6 +384,7 @@ function DibujaAhorcado(contador){
 			$("#piederecho").show();
 			$("#ContenedorAbecedario").hide();
 			$("#resultado").show();
+			$("#botonRes").show();
 			$("#resultado").html("Perdiste :(");
 			var str = window.respuesta.split("");
 			for(i=0; i<window.longitud; i++){
@@ -418,7 +420,8 @@ document.addEventListener("DOMContentLoaded",init)
 					</div>
 				</div>
 			</div>
-			<div id="resultado" class="Resultado" style="display:none;"></div>	
+			<div id="resultado" class="Resultado" style="display:none;"></div>
+			<div id="botonRes" class="btn" style="display:none;"><a href="#" data-bind="click: init">Jugar de nuevo</a></div>	
 		</div>
 	</div>
     
