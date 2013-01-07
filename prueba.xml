@@ -276,10 +276,9 @@ function CargaPreguntas(){
 
 	var preg = gapi.hangout.data.getValue('pregunta');
 		alert("----"+preg);
+		if(preg=='Cargando'){
 		 $.getJSON('http://metaversoeducativo.net/sisFH/msicu/php/servicioPreguntas.php', function(data) {
-		 	
 		 var palabra = "";
-
 		   	$.each(data.temario, function(indice, valor) {
 		   		window.respuesta = unescape(valor.respuesta);
 		   		window.longitud = respuesta.length;
@@ -295,6 +294,13 @@ function CargaPreguntas(){
 		 		gapi.hangout.data.setValue("pregunta",valor.pregunta);
 		 		});
 		 		});
+		 }
+		 else{
+		 		$("#Palabra").empty();
+		 		$("#Palabra").append(gapi.hangout.data.getValue('palabra'););
+		 		$("#Pregunta").empty();
+		 		$("#Pregunta").append(gapi.hangout.data.getValue('pregunta'););
+		 }
 }
 
 var abecedario = new Array();
@@ -441,7 +447,7 @@ init();
 	<div class="principal">
 		<div class="JuegoAhorcado">
 			<div class="ContenedorJuego">
-				<div id="Pregunta" class="Pregunta"></div>
+				<div id="Pregunta" class="Pregunta">Cargando...</div>
 				<div class="ColumnaUno">
 					<div id="ContenedorAbecedario" class="ContenedorAbecedario">
 						<ul class="Azul" id="letras"></ul>
