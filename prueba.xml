@@ -328,17 +328,20 @@ function myEventHandlers(){
 function ValidaLetra(li){
 	//Recupero el valor de la letra que escribió el jugador
 	var letraIngresada = String(li);
+	alert("Ingresada: "+letraIngresada);
 	//Cambio el estilo para que aparezca la letra presionada
 	$("#"+letraIngresada).addClass("Usado");
 
 	//Obtengo la posicion de letra elegida en la palabra a adivinar
 	var arrayRespuesta = window.respuesta.split("");
+	alert("Arrarj--"+arrayRespuesta);
 	var posiciones = new Array();
 	var j = 0;
 	for(i=0; i<window.longitud; i++){
 		if(arrayRespuesta[i] == letraIngresada){
 			posiciones[j] = i;
 			j++;
+			alert("j--"+j);
 		}
 	}
 
