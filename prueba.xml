@@ -263,12 +263,14 @@ function init(){
 	alert(contaB);
 	alert(contaM);
 	if(typeof contaB=="undefined"){
-		gapi.hangout.data.setValue("contadorBuenas",0);
+	alert("dentro 1,1");
+		gapi.hangout.data.setValue("contadorBuenas","0");alert("dentro1");
 	}/* else{
 	sessionStorage.setItem("palabra",contaB);
 	} */
 	if(typeof contaM=="undefined"){
-		gapi.hangout.data.setValue("contadorMalas",0);
+	alert("aaaa");
+		gapi.hangout.data.setValue("contadorMalas","0");alert("dentro2");
 	}/*else{
   	sessionStorage.setItem("contador",contaM);
 	}*/
