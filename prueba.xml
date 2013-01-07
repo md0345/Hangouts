@@ -287,18 +287,17 @@ var preg =gapi.hangout.data.getValue('pregunta');
 		 		}
 		 		$("#Palabra").append(palabra);
 		 		gapi.hangout.data.setValue("palabra",palabra);
-		 		$("#Pregunta").html(valor.pregunta);
+		 		$("#Pregunta").empty();
+		 		$("#Pregunta").append(valor.pregunta);
 		 		gapi.hangout.data.setValue("pregunta",valor.pregunta);
 		 		});
 		 		});
-	}//else{
-		// 		gapi.hangout.data.setValue("palabra",gapi.hangout.data.getValue('palabra'));
-		 //		$("#Pregunta").append(gapi.hangout.data.getValue('pregunta'));
-		 	//	gapi.hangout.data.setValue("pregunta",valor.pregunta);
-		 //		});
-		 
-
-		 //}
+	}else{
+				$("#Pregunta").empty();
+		 		$("#Pregunta").append(gapi.hangout.data.getValue('pregunta'));
+				$("#Palabra").empty();
+		 		$("#Palabra").append(gapi.hangout.data.getValue('palabra'));
+		}
 }
 
 var abecedario = new Array();
