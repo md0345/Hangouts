@@ -336,6 +336,7 @@ function ValidaLetra(li){
 	var arrayRespuesta = window.respuesta.split("");
 	
 	var posiciones = new Array();
+	alert("posiciones: "+posiciones);
 	var j = 0;
 	for(i=0; i<window.longitud; i++){
 		if(arrayRespuesta[i] == letraIngresada){
@@ -346,7 +347,7 @@ function ValidaLetra(li){
 	}
 
 	resp = posiciones == "" ? -1 : posiciones;
-	alert("resp--"+resp);
+	alert("resp: "+resp);
 	//Si la letra existe dentro de la palabra
 	if(resp != -1){
 		pos = resp.length;
