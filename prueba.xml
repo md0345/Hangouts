@@ -432,11 +432,10 @@ gapi.hangout.onAppVisible.add(function() {
 
 //document.addEventListener("DOMContentLoaded",init);
 gapi.hangout.onApiReady.add(function(){
-	init();
+	setTimeout(init(),2000);
 }
   
 )
-
       </script>
       <!-- application code -->
 	<div class="principal">
