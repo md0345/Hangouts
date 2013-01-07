@@ -263,7 +263,7 @@ function init(){
 	gapi.hangout.data.setValue("pregunta",vacio);
 	alert(gapi.hangout.data.getValue('pregunta'));
 	generaLetras();
-	setTimeout(CargaPreguntas(),5000);
+	setTimeout(CargaPreguntas,5000);
 });
 }
 
