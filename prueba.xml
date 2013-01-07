@@ -270,9 +270,8 @@ var longitud = 0;
 
 function CargaPreguntas(){
 	//Recupero una pregunta aleatoria de la BD 
-var pregunta =gapi.hangout.data.getValue('pregunta');
-alert(pregunta);
-//if(pregunta==undefined)
+		var state = gapi.hangout.data.getState();
+		alert(state);
 		 $.getJSON('http://metaversoeducativo.net/sisFH/msicu/php/servicioPreguntas.php', function(data) {
 		 	
 		 var palabra = "";
@@ -290,7 +289,6 @@ alert(pregunta);
 		 		gapi.hangout.data.setValue("pregunta",valor.pregunta);
 		 		});
 		 		});
-		 }//CIERRA IF PREGUNTA
 }
 
 var abecedario = new Array();
