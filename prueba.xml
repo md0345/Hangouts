@@ -363,12 +363,9 @@ function ValidaGanado(){
 	}
 }
 function aa(){
-alert("entré");
 var state = gapi.hangout.data.getState();
-alert("hola");
 $.each(state,function(indice,valor){
-	$("#l"+indice).append(valor);
-	alert("estoyDentro");
+$("#l"+indice).val(valor)
 });
 alert("lohice");
 }
@@ -404,6 +401,7 @@ function DibujaAhorcado(contador){
 			var str = window.respuesta.split("");
 			for(i=0; i<window.longitud; i++){
 				$("#l"+i).val(str[i]);
+
 			}
 		break;
 		default: $("#monito").show();	
