@@ -332,7 +332,7 @@ function ValidaLetra(li){
 			var contPalabra = parseInt(sessionStorage.getItem("palabra")) + 1;
 			sessionStorage.setItem("palabra",contPalabra);
 			//GAPI
-			gapi.hangout.data.setValue("palabra", contPalabra);
+			gapi.hangout.data.setValue("letraIngresada",contPalabra);
 			//
 			$("#l"+resp[i]).val(letraIngresada);
 
