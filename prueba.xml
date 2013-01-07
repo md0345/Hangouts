@@ -298,6 +298,7 @@ function CargaPreguntas(){
 		 }
 		 else{
 		 window.respuesta = gapi.hangout.data.getValue('respuesta');
+		 	window.longitud = respuesta.length;
 		 		$("#Palabra").empty();
 		 		$("#Palabra").append(gapi.hangout.data.getValue('palabra'));
 		 		$("#Pregunta").empty();
@@ -355,17 +356,13 @@ function ValidaLetra(li){
 			//Contador que se va incrementando conforme haya letras que existan en la palabra
 			var contPalabra = parseInt(sessionStorage.getItem("palabra")) + 1;
 			sessionStorage.setItem("palabra",contPalabra);
-			
 			$("#l"+resp[i]).val(letraIngresada);
 			var eeee= (resp[i]).toString();
-
 			//GAPI
 			gapi.hangout.data.setValue(eeee,letraIngresada);
 			//
-
 			ValidaGanado();
-		}
-		
+		}	
 	}
 	//Si la letra NO existe dentro de la palabra
 	else{
