@@ -264,6 +264,14 @@ function init(){
 });
 }
 
+function init2(){
+	sessionStorage.setItem("palabra",0);
+	sessionStorage.setItem("contador",0);
+	generaLetras();
+	CargaPreguntas()
+
+}
+
 var respuesta = "";
 var longitud = 0;
 
@@ -402,13 +410,14 @@ document.addEventListener("DOMContentLoaded",init)
 	<div class="principal">
 		<div class="JuegoAhorcado">
 			<div class="ContenedorJuego">
-				<div id="botonRes" class="btn" style="display:none;"><a href="#" data-bind="click: init">Jugar de nuevo</a></div>	
+					
 				<div id="Pregunta" class="Pregunta"></div>
 				<div class="ColumnaUno">
 					<div id="ContenedorAbecedario" class="ContenedorAbecedario">
 						<ul class="Azul" id="letras"></ul>
 					</div>
 					<div class="Palabra" id="Palabra"></div>
+				<div id="botonRes" class="btn" style="display:none;"><a href="#" data-bind="click: init2">Jugar de nuevo</a></div>	
 				</div>
 				<div class="ColumnaDos">
 					<div id="monito" class="ContenedorAhorcado">
