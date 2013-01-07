@@ -255,6 +255,7 @@ h3{
       
       <script type="text/javascript">
 function init(){
+aler("aaaa");
 	gapi.hangout.onApiReady.add(function(){
 	myEventHandlers();
 	sessionStorage.setItem("palabra",0);
