@@ -270,18 +270,11 @@ var longitud = 0;
 
 function CargaPreguntas(){
 	//Recupero una pregunta aleatoria de la BD 
-var pregunta =gapi.hangout.data.getValue('pregunta');
+var preg =gapi.hangout.data.getValue('pregunta');
 		alert(pregunta);
 
-		if(gapi.hangout.data.getValue('pregunta')){
-		 
-		 		gapi.hangout.data.setValue("palabra",gapi.hangout.data.getValue('palabra'));
-		 		$("#Pregunta").append(gapi.hangout.data.getValue('pregunta'));
-		 		gapi.hangout.data.setValue("pregunta",valor.pregunta);
-		 		});
-	}else{
-
-		 		$.getJSON('http://metaversoeducativo.net/sisFH/msicu/php/servicioPreguntas.php', function(data) {
+		if(preg==undefined){
+		 $.getJSON('http://metaversoeducativo.net/sisFH/msicu/php/servicioPreguntas.php', function(data) {
 		 	
 		 var palabra = "";
 
@@ -297,6 +290,11 @@ var pregunta =gapi.hangout.data.getValue('pregunta');
 		 		$("#Pregunta").html(valor.pregunta);
 		 		gapi.hangout.data.setValue("pregunta",valor.pregunta);
 		 		});
+		 		});
+	}else{
+		 		gapi.hangout.data.setValue("palabra",gapi.hangout.data.getValue('palabra'));
+		 		$("#Pregunta").append(gapi.hangout.data.getValue('pregunta'));
+		 		gapi.hangout.data.setValue("pregunta",valor.pregunta);
 		 		});
 		 
 
