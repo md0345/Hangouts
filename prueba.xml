@@ -259,8 +259,9 @@ function init(){
 	//myEventHandlers();
 	sessionStorage.setItem("palabra",0);
 	sessionStorage.setItem("contador",0);
-	generaLetras();
-	CargaPreguntas()
+	CargaPreguntas();
+	generaLetras()
+	
 });
 }
 
