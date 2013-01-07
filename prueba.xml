@@ -261,8 +261,9 @@ function init(){
 	sessionStorage.setItem("contador",0);
 	var vacio="Cargando";
 	gapi.hangout.data.setValue("pregunta",vacio);
+	alert(gapi.hangout.data.getValue('pregunta'));
 	generaLetras();
-	CargaPreguntas()
+	//CargaPreguntas()
 });
 }
 
@@ -272,8 +273,8 @@ var longitud = 0;
 
 function CargaPreguntas(){
 	//Recupero una pregunta aleatoria de la BD 
-	var preg= "";
-		preg = gapi.hangout.data.getValue('pregunta');
+
+	var preg = gapi.hangout.data.getValue('pregunta');
 		alert(preg);
 		 $.getJSON('http://metaversoeducativo.net/sisFH/msicu/php/servicioPreguntas.php', function(data) {
 		 	
