@@ -362,17 +362,12 @@ function ValidaGanado(){
 		$("#resultado").html("Ganaste :)");
 	}
 }
-<!-- 
 function aa(){
-	var ttt= new Array();
-	ttt= gapi.hangout.data.getState();
-	var logitud=ttt.length;
-	for (i = 0; i <logitud; i++){
-
-
-	}
+var state = gapi.hangout.data.getState();
+$.each(state,function(indice,valor){
+	$("#l"+indice).append(valor);
+});
 }
- -->
 
 function DibujaAhorcado(contador){
 	switch(contador){
@@ -411,6 +406,8 @@ function DibujaAhorcado(contador){
 	}
 }
 
+$("#bttn").on("click",aa);
+
 document.addEventListener("DOMContentLoaded",init);
       </script>
 
@@ -424,6 +421,7 @@ document.addEventListener("DOMContentLoaded",init);
 						<ul class="Azul" id="letras"></ul>
 					</div>
 					<div class="Palabra" id="Palabra"></div>
+				<button id="bttn">aaa</button>
 				</div>
 				<div class="ColumnaDos">
 					<div id="monito" class="ContenedorAhorcado">
