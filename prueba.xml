@@ -272,7 +272,7 @@ function CargaPreguntas(){
 	//Recupero una pregunta aleatoria de la BD 
 var pregunta =gapi.hangout.data.getValue('pregunta');
 		alert(pregunta);
-		//if(pregunta=='undefined'){
+		//if(pregunta==""){
 		 $.getJSON('http://metaversoeducativo.net/sisFH/msicu/php/servicioPreguntas.php', function(data) {
 		 	
 		 var palabra = "";
@@ -286,7 +286,7 @@ var pregunta =gapi.hangout.data.getValue('pregunta');
 		 		}
 		 		$("#Palabra").append(palabra);
 		 		gapi.hangout.data.setValue("palabra",palabra);
-		 		$("#Pregunta").append(valor.pregunta);
+		 		$("#Pregunta").html(valor.pregunta);
 		 		gapi.hangout.data.setValue("pregunta",valor.pregunta);
 		 		});
 		 		});
