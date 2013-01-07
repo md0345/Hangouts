@@ -357,6 +357,7 @@ function ValidaLetra(li){
 		var contador = parseInt(sessionStorage.getItem("contador")) + 1;
 		sessionStorage.setItem("contador",contador);
 
+
 		//Envío a todos los jugadores la letra que ingresaron
 		DibujaAhorcado(contador);
 	}
@@ -375,6 +376,7 @@ var state = gapi.hangout.data.getState();
 $.each(state,function(indice,valor){
 $("#l"+indice).val(valor);
 });
+ValidaGanado();
 
 }
 
