@@ -331,10 +331,13 @@ function ValidaLetra(li){
 			//Contador que se va incrementando conforme haya letras que existan en la palabra
 			var contPalabra = parseInt(sessionStorage.getItem("palabra")) + 1;
 			sessionStorage.setItem("palabra",contPalabra);
-			//GAPI
-			gapi.hangout.data.setValue("letraIngresada",contPalabra);
-			//
+			
 			$("#l"+resp[i]).val(letraIngresada);
+			var eeee= ("#l"+resp[i]).toString();
+
+			//GAPI
+			gapi.hangout.data.setValue("eeee",letraIngresada);
+			//
 
 			ValidaGanado();
 		}
