@@ -291,14 +291,14 @@ var preg =gapi.hangout.data.getValue('pregunta');
 		 		gapi.hangout.data.setValue("pregunta",valor.pregunta);
 		 		});
 		 		});
-	}else{
-		 		gapi.hangout.data.setValue("palabra",gapi.hangout.data.getValue('palabra'));
-		 		$("#Pregunta").append(gapi.hangout.data.getValue('pregunta'));
-		 		gapi.hangout.data.setValue("pregunta",valor.pregunta);
-		 		});
+	}//else{
+		// 		gapi.hangout.data.setValue("palabra",gapi.hangout.data.getValue('palabra'));
+		 //		$("#Pregunta").append(gapi.hangout.data.getValue('pregunta'));
+		 	//	gapi.hangout.data.setValue("pregunta",valor.pregunta);
+		 //		});
 		 
 
-		 }
+		 //}
 }
 
 var abecedario = new Array();
