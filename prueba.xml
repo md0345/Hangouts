@@ -254,20 +254,6 @@ h3{
       <script type="text/javascript" src= "https://raw.github.com/CharlyMcFly/downloads/master/ahorcado2/js/jquery-1.7.1.min.js"></script>
       
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
       <script type="text/javascript">
 function init(){
 	gapi.hangout.onApiReady.add(function(){
@@ -279,7 +265,6 @@ function init(){
 	
 });
 }
-
 
 var respuesta = "";
 var longitud = 0;
@@ -415,34 +400,7 @@ function DibujaAhorcado(contador){
 document.addEventListener("DOMContentLoaded",init)
       </script>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      <!-- application code -->
+   <!-- application code -->
 	<div class="principal">
 		<div class="JuegoAhorcado">
 			<div class="ContenedorJuego">
@@ -454,7 +412,7 @@ document.addEventListener("DOMContentLoaded",init)
 					</div>
 					<div class="Palabra" id="Palabra"></div>
 				<div id="botonRes" class="btn" style="display:none;">
-					<a href="javascript:location.reload()">Jugar de nuevo</a>
+					<a href="javascript:location.reload();init()">Jugar de nuevo</a>
 				</div>
 				<div class="ColumnaDos">
 					<div id="monito" class="ContenedorAhorcado">
