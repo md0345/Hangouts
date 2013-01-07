@@ -411,9 +411,7 @@ document.addEventListener("DOMContentLoaded",init)
 						<ul class="Azul" id="letras"></ul>
 					</div>
 					<div class="Palabra" id="Palabra"></div>
-				<div id="botonRes" class="btn" style="display:none;">
-					<a href="javascript:location.reload();">Jugar de nuevo</a>
-				</div>
+				
 				<div class="ColumnaDos">
 					<div id="monito" class="ContenedorAhorcado">
 						<div id="cabeza" class="Cabeza_" style="display:none;"></div>
@@ -426,6 +424,9 @@ document.addEventListener("DOMContentLoaded",init)
 				</div>
 			</div>
 			<div id="resultado" class="Resultado" style="display:none;"></div>
+			<div id="botonRes" class="btn" style="display:none;">
+					<a href="javascript:location.reload();">Jugar de nuevo</a>
+				</div>
 		</div>
 	</div>
     
