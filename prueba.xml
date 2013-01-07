@@ -270,7 +270,8 @@ var longitud = 0;
 
 function CargaPreguntas(){
 	//Recupero una pregunta aleatoria de la BD 
-		
+		var state = gapi.hangout.data.getState();
+		alert(state);
 		 $.getJSON('http://metaversoeducativo.net/sisFH/msicu/php/servicioPreguntas.php', function(data) {
 		 	
 		 var palabra = "";
@@ -309,9 +310,6 @@ function myEventHandlers(){
 	//gapi.hangout.data.onStateChanged.add();
 }
 
-gapi.hangout.data.onStateChanged.add(function(stateChangeEvent) {
-         aa();
-});
 
 function ValidaLetra(li){
 	//Recupero el valor de la letra que escribió el jugador
@@ -372,14 +370,6 @@ function ValidaGanado(){
 		$("#resultado").html("Ganaste :)");
 	}
 }
-function aa(){
-var state = gapi.hangout.data.getState();
-$.each(state,function(indice,valor){
-$("#l"+indice).val(valor);
-});
-//CargaPreguntas();
-//ValidaGanado();
-}
 
 function DibujaAhorcado(contador){
 	switch(contador){
@@ -418,8 +408,24 @@ function DibujaAhorcado(contador){
 		default: $("#monito").show();	
 	}
 }
+function aa(){
+var state = gapi.hangout.data.getState();
+$.each(state,function(indice,valor){
+$("#l"+indice).val(valor);
+});
+//CargaPreguntas();
+//ValidaGanado();
+}
+gapi.hangout.data.onStateChanged.add(function(stateChangeEvent) {
+         aa();
+});
+gapi.hangout.data.onParticipantsAdded.add(function() {
+         CargaPreguntas();
+});
 
 document.addEventListener("DOMContentLoaded",init);
+
+
       </script>
       <!-- application code -->
 	<div class="principal">
