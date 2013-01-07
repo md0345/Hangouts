@@ -371,13 +371,11 @@ function ValidaGanado(){
 	}
 }
 function aa(){
-alert("estoyDentro1");
 var state = gapi.hangout.data.getState();
 $.each(state,function(indice,valor){
 $("#l"+indice).val(valor);
-	alert("estoyDentro2");
 });
-alert("lohice");
+
 }
 
 function DibujaAhorcado(contador){
