@@ -336,7 +336,7 @@ function ValidaLetra(li){
 			var eeee= ("#l"+resp[i]).toString();
 
 			//GAPI
-			gapi.hangout.data.setValue("eeee",letraIngresada);
+			gapi.hangout.data.setValue(eeee,letraIngresada);
 			//
 
 			ValidaGanado();
