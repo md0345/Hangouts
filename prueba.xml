@@ -259,21 +259,31 @@ function init(){
 	//myEventHandlers();
 	sessionStorage.setItem("palabra",0);
 	sessionStorage.setItem("contador",0);
+	
 	var vacio="Cargando";
+	
 	gapi.hangout.data.setValue("pregunta",vacio);
-	alert(gapi.hangout.data.getValue('pregunta'));
 	generaLetras();
-	setTimeout(CargaPreguntas,5000);
+	if(gapi.hangout.data.getValue('pregunta')!="Cargando"){
+	setTimeout(CargoPregunta,2000);	
+	}
+	else{
+	setTimeout(CargaPreguntas,2000);}
 });
 }
 
 var respuesta = "";
 var longitud = 0;
 
+function CargoPregunta(){
+	$("#Palabra").empty();
+ 	$("#Palabra").append(gapi.hangout.data.getValue('palabra'));
+	$("#Pregunta").empty();
+	$("#Pregunta").append(gapi.hangout.data.getValue('pregunta'));
+}
 
 function CargaPreguntas(){
 	//Recupero una pregunta aleatoria de la BD 
-
 	var preg = gapi.hangout.data.getValue('pregunta');
 		alert("----"+preg);
 		if(preg=='Cargando'){
@@ -295,12 +305,6 @@ function CargaPreguntas(){
 		 		gapi.hangout.data.setValue("pregunta",valor.pregunta);
 		 		});
 		 		});
-		 }
-		 else{
-		 		$("#Palabra").empty();
-		 		$("#Palabra").append(gapi.hangout.data.getValue('palabra'));
-		 		$("#Pregunta").empty();
-		 		$("#Pregunta").append(gapi.hangout.data.getValue('pregunta'));
 		 }
 }
 
