@@ -402,6 +402,7 @@ document.addEventListener("DOMContentLoaded",init)
 	<div class="principal">
 		<div class="JuegoAhorcado">
 			<div class="ContenedorJuego">
+				<div id="botonRes" class="btn" style="display:none;"><a href="#" data-bind="click: init">Jugar de nuevo</a></div>	
 				<div id="Pregunta" class="Pregunta"></div>
 				<div class="ColumnaUno">
 					<div id="ContenedorAbecedario" class="ContenedorAbecedario">
@@ -421,7 +422,7 @@ document.addEventListener("DOMContentLoaded",init)
 				</div>
 			</div>
 			<div id="resultado" class="Resultado" style="display:none;"></div>
-			<div id="botonRes" class="btn" style="display:none;"><a href="#" data-bind="click: init">Jugar de nuevo</a></div>	
+			
 		</div>
 	</div>
     
