@@ -275,7 +275,7 @@ function CargaPreguntas(){
 	//Recupero una pregunta aleatoria de la BD 
 
 	var preg = gapi.hangout.data.getValue('pregunta');
-		alert(preg);
+		alert("----"+preg);
 		 $.getJSON('http://metaversoeducativo.net/sisFH/msicu/php/servicioPreguntas.php', function(data) {
 		 	
 		 var palabra = "";
