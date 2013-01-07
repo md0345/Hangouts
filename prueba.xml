@@ -436,7 +436,7 @@ $.each(state,function(indice,valor){
 $("#l"+indice).val(valor);
 });
 //CargaPreguntas();
-//ValidaGanado();
+ValidaGanado();
 }
 
 gapi.hangout.data.onStateChanged.add(function(stateChangeEvent) {
