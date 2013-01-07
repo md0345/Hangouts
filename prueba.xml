@@ -424,9 +424,9 @@ document.addEventListener("DOMContentLoaded",init)
 				</div>
 			</div>
 			<div id="resultado" class="Resultado" style="display:none;"></div>
-			<div id="botonRes" class="btn" style="display:none;">
+			<!-- <div id="botonRes" class="btn" style="display:none;">
 					<a href="javascript:location.reload();">Jugar de nuevo</a>
-				</div>
+				</div> -->
 		</div>
 	</div>
     
