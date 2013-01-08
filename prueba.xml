@@ -260,7 +260,7 @@ function init(){
 	
 	var contaB= gapi.hangout.data.getValue('contadorBuenas');
 	var contaM= gapi.hangout.data.getValue('contadorMalas');
-	
+	alert("contaM"+contaM);
 	if(typeof contaB=="undefined"){
 	
 		gapi.hangout.data.setValue("contadorBuenas","0");
@@ -269,10 +269,11 @@ function init(){
 	} 
 	if(typeof contaM=="undefined"){
 			gapi.hangout.data.setValue("contadorMalas","0");
+			alert("GAPI CONM" +gapi.hangout.data.setValue("contadorMalas","0"));
 	}else{
+	
   	sessionStorage.setItem("contador",parseInt(contaM));
 	}
-	
 	generaLetras();
 	setTimeout(CargaPreguntas,2000);
 });
