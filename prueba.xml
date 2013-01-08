@@ -340,6 +340,7 @@ function myEventHandlers(){
 
 
 function ValidaLetra(li){
+alert("ValidaLetra "+li);
 	//Recupero el valor de la letra que escribió el jugador
 	var letraIngresada = String(li);
 	
