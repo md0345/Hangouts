@@ -508,11 +508,11 @@ function aa(){
 	var state = gapi.hangout.data.getState();
 	$.each(state,function(indice,valor){
 	if(indice=="monito"){
-switch(valor){
-case 1: 
-			//dibuja la cabeza
-			$("#cabeza").show();
-		break;
+		switch(valor){
+		case 1: 
+				//dibuja la cabeza
+				$("#cabeza").show();
+			break;
 		case 2: 
 			//dibuja el tronco
 			$("#cabeza").show();
@@ -561,7 +561,7 @@ case 1:
 	}else{
 		ValidaLetra2(valor);
 	}
-	}
+	
 });
 //CargaPreguntas();
 //ValidaGanado();
