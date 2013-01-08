@@ -397,6 +397,7 @@ function recorreError(){
 	letrasErroneas = gapi.hangout.data.getState();
 		$.each(letrasErroneas,function(indice, valor){
 			if(indice.match(/err_.*/)){
+			alert("indice");
 				ValidaLetra3(valor);
 			}else{
 			ValidaLetra2(valor);
