@@ -513,7 +513,9 @@ function aa(){
 		switch(valor){
 		case 1: 
 				//dibuja la cabeza
+				alert("dibujo Cab?")
 				$("#cabeza").show();
+				alert("Si Cab")
 			break;
 		case 2: 
 			//dibuja el tronco
