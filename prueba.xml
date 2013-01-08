@@ -382,7 +382,13 @@ alert("ValidaLetra "+li);
 		var contadorM = parseInt(gapi.hangout.data.getValue('contadorMalas')) + 1;
 		sessionStorage.setItem("contador",contadorM);
 	  	gapi.hangout.data.setValue("contadorMalas", contadorM.toString());
+<<<<<<< HEAD
   		
+=======
+  		gapi.hangout.data.submitDelta({
+  			"err_"+letraIngresada: letraIngresada, 
+ 		});
+>>>>>>> 375322877bc3be09138b50732d11eea6905c4854
 		//GAPI
 			gapi.hangout.data.setValue("err_"+letraIngresada,letraIngresada);
 		//
