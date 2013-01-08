@@ -260,9 +260,8 @@ function init(){
 	
 	var contaB= gapi.hangout.data.getValue('contadorBuenas');
 	var contaM= gapi.hangout.data.getValue('contadorMalas');
-	
+	alert(contaM);
 	if(typeof contaB=="undefined"){
-	
 		gapi.hangout.data.setValue("contadorBuenas","0");
 	} else{
 	sessionStorage.setItem("palabra",contaB);
