@@ -508,12 +508,11 @@ function aa(){
 	var state = gapi.hangout.data.getState();
 	$.each(state,function(indice,valor){
 		//alert(indice);
-		if(indice.length==5){
-			var letra = indice.substring(4);
-			alert(letra);
-			$("#"+letra).addClass("Usado");
+		//if(indice.length==5){
+		//	var letra = indice.substring(4);
+		////	$("#"+letra).addClass("Usado");
 			//ValidaLetra2(valor);
-		}
+		//}
 		if(indice=="monito"){
 			//alert("CM: "+valor);
 	
