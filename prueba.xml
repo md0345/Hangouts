@@ -507,6 +507,7 @@ function DibujaAhorcado(contador){
 function aa(){
 	var state = gapi.hangout.data.getState();
 	$.each(state,function(indice,valor){
+	alert(indice);
 	if(indice=="contadorMalas"){
 	alert("CM: "+valor);
 		switch(valor){
