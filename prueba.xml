@@ -260,20 +260,19 @@ function init(){
 	
 	var contaB= gapi.hangout.data.getValue('contadorBuenas');
 	var contaM= gapi.hangout.data.getValue('contadorMalas');
-	alert(contaM);
-	if(typeof contaB=="undefined"){
-		gapi.hangout.data.setValue("contadorBuenas","0");
-	} else{
-	sessionStorage.setItem("palabra",contaB);
-	}
 	
+	if(typeof contaB=="undefined"){
+	
+		gapi.hangout.data.setValue("contadorBuenas","0");
+	}/* else{
+	sessionStorage.setItem("palabra",contaB);
+	} */
 	if(typeof contaM=="undefined"){
-	alert(contaM);
+	
 		gapi.hangout.data.setValue("contadorMalas","0");
-	}else{
-	alert("sseion");
+	}/*else{
   	sessionStorage.setItem("contador",contaM);
-	}
+	}*/
 	
 	generaLetras();
 	setTimeout(CargaPreguntas,2000);
@@ -444,32 +443,25 @@ function DibujaAhorcado(contador){
 		case 1: 
 			//dibuja la cabeza
 			$("#cabeza").show();
-			gapi.hangout.data.setValue("cab","1");
 		break;
 		case 2: 
 			//dibuja el tronco
 			$("#tronco").show();
-			gapi.hangout.data.setValue("tronc","1");
-		 break;
+		break;
 		case 3:
 			//dibuja el brazo izquierdo
 			$("#brazoizquierdo").show();
-			gapi.hangout.data.setValue("brI","1");
-		 	
 		break;
 		case 4:
 			//dibuja el brazo derecho
 			$("#brazoderecho").show();
-			gapi.hangout.data.setValue("brD","1");
-		 break;
+		break;
 		case 5:
 			//dibuja la pierna izquierda
 			$("#pieizquierdo").show();
-			gapi.hangout.data.setValue("pieI","1");
 		break;
 		case 6:
 			//dibuja la pierna derecha y pierde
-			gapi.hangout.data.setValue("pieD","1");
 			$("#piederecho").show();
 			$("#ContenedorAbecedario").hide();
 			$("#resultado").show();
@@ -485,7 +477,7 @@ function DibujaAhorcado(contador){
 function aa(){
 var state = gapi.hangout.data.getState();
 $.each(state,function(indice,valor){
-$("#l"+indice).val(valor);
+//$("#l"+indice).val(valor);
 ValidaLetra2(valor);
 });
 //CargaPreguntas();
@@ -503,8 +495,12 @@ gapi.hangout.onAppVisible.add(function() {
 
 //document.addEventListener("DOMContentLoaded",init);
 gapi.hangout.onApiReady.add(function(){
-setTimeout(init,2000);})
-</script>
+setTimeout(init,2000);
+
+}
+ 
+)
+      </script>
       <!-- application code -->
 	<div class="principal">
 		<div class="JuegoAhorcado">
