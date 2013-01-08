@@ -383,13 +383,13 @@ function ValidaLetra(li){
 		var contadorM = parseInt(sessionStorage.getItem("contador")) + 1;
 		sessionStorage.setItem("contador",contadorM);
 	  	gapi.hangout.data.setValue("contadorMalas", contadorM.toString());
-	  	var sss= (resp[i]).toString();
+  		var sss= "err:"+letraIngresada;
 		//GAPI
-			gapi.hangout.data.setValue(sss,letraIngresada);
+			gapi.hangout.data.setValue(sss, letraIngresada);
 		//
 
 		//Envío a todos los jugadores la letra que ingresaron
-		DibujaAhorcado(contador);
+		DibujaAhorcado(contadorM);
 	}
 }
 
