@@ -257,7 +257,7 @@ h3{
 function init(){
 	gapi.hangout.onApiReady.add(function(){
 	//myEventHandlers();
-	
+alert("INIT");	
 	var contaB= gapi.hangout.data.getValue('contadorBuenas');
 	var contaM= gapi.hangout.data.getValue('contadorMalas');
 	alert(contaM);
@@ -499,6 +499,7 @@ gapi.hangout.onAppVisible.add(function() {
 });
 //document.addEventListener("DOMContentLoaded",init);
 gapi.hangout.onApiReady.add(function(){
+alert("api ready");
 setTimeout(init,2000);});
 </script>
       <!-- application code -->
