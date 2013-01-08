@@ -395,7 +395,7 @@ function ValidaLetra(li){
 
 
 function ValidaLetra2(li){
-alert("Valida2")
+//alert("Valida2")
 	//Recupero el valor de la letra que escribió el jugador
 	var letraIngresada = String(li);
 	
