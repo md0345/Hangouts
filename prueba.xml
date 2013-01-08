@@ -340,7 +340,7 @@ function myEventHandlers(){
 
 
 function ValidaLetra(li){
-//alert("ValidaLetra "+li);
+alert("ValidaLetra "+li);
 	//Recupero el valor de la letra que escribió el jugador
 	var letraIngresada = String(li);
 	
@@ -395,7 +395,7 @@ function ValidaLetra(li){
 
 
 function ValidaLetra2(li){
-//alert("Valida2")
+alert("Valida2")
 	//Recupero el valor de la letra que escribió el jugador
 	var letraIngresada = String(li);
 	
@@ -507,21 +507,21 @@ function DibujaAhorcado(contador){
 function aa(){
 	var state = gapi.hangout.data.getState();
 	$.each(state,function(indice,valor){
-	//alert(indice);
+	alert(indice);
 	if(indice.length==5){
 	var letra = indice.substring(4)
 	letra.addClass("Usado");
 	//ValidaLetra2(valor);
 	}
 	if(indice=="monito"){
-	//alert("CM: "+valor);
+	alert("CM: "+valor);
 
 		switch(valor){
 		case "1": 
 			//dibuja la cabeza
-			//alert("dibujo Cab?");
+			alert("dibujo Cab?");
 			$("#cabeza").show();
-			//alert("Si Cab");
+			alert("Si Cab");
 			break;
 		case "2": 
 			//dibuja el tronco
