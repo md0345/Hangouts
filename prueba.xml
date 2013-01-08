@@ -512,10 +512,10 @@ function aa(){
 	alert("CM: "+valor);
 		switch(valor){
 		case 1: 
-				//dibuja la cabeza
-				alert("dibujo Cab?")
-				$("#cabeza").show();
-				alert("Si Cab")
+			//dibuja la cabeza
+			alert("dibujo Cab?");
+			$("#cabeza").show();
+			alert("Si Cab");
 			break;
 		case 2: 
 			//dibuja el tronco
@@ -565,7 +565,6 @@ function aa(){
 	}else{
 		ValidaLetra2(valor);
 	}
-	
 });
 //CargaPreguntas();
 //ValidaGanado();
