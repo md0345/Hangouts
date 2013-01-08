@@ -477,7 +477,7 @@ function DibujaAhorcado(contador){
 function aa(){
 var state = gapi.hangout.data.getState();
 $.each(state,function(indice,valor){
-//$("#l"+indice).val(valor);
+$("#l"+indice).val(valor);
 ValidaLetra2(valor);
 });
 //CargaPreguntas();
