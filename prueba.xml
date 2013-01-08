@@ -387,7 +387,7 @@ function ValidaLetra(li){
 		//GAPI
 			gapi.hangout.data.setValue(sss, letraIngresada);
 		//
-
+alert(contadorM);
 		//Envío a todos los jugadores la letra que ingresaron
 		DibujaAhorcado(contadorM);
 	}
@@ -431,7 +431,7 @@ function ValidaLetra2(li){
 	else{
 		//Contador para sumar los intentos e ir pintando cada parte del monito ahorcado
 		var contador = parseInt(sessionStorage.getItem("contador")) + 1;
-		alert("contadorAntesdeDibujar" +contador);
+		//alert("contadorAntesdeDibujar" +contador);
 		sessionStorage.setItem("contador",contador);
 		//Envío a todos los jugadores la letra que ingresaron
 		DibujaAhorcado(contador);
