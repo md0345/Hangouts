@@ -381,7 +381,7 @@ function ValidaLetra(li){
 		var contadorM = parseInt(gapi.hangout.data.getValue('contadorMalas')) + 1;
 		sessionStorage.setItem("contador",contadorM);
 	  	gapi.hangout.data.setValue("contadorMalas", contadorM.toString());
-  		var sss= "err:"+letraIngresada;
+  		var sss += letraIngresada+"|";
 		//GAPI
 			gapi.hangout.data.setValue(sss, letraIngresada);
 		//
@@ -391,7 +391,17 @@ alert(contadorM);
 	}
 }
 
-//
+//Función para recorrer las letras erróneas
+var erroneas = new Array();
+function recorreError(){
+	erroneas = var sss.split("|");
+	var ll = erroneas.length;
+	for(i=0;i<ll;i++){
+		ValidaLetra2(erroneas[i])
+	}
+}
+
+
 function ValidaLetra2(li){
 	//Recupero el valor de la letra que escribió el jugador
 	var letraIngresada = String(li);
