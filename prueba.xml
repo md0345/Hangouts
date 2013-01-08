@@ -367,8 +367,6 @@ function ValidaLetra(li){
 			sessionStorage.setItem("palabra",contPalabra);
 			//GAPI
 			gapi.hangout.data.setValue("contadorBuenas",contPalabra.toString());
-  		
-
 			$("#l"+resp[i]).val(letraIngresada);
 			var eeee= (resp[i]).toString();
 			//GAPI
@@ -380,14 +378,14 @@ function ValidaLetra(li){
 	//Si la letra NO existe dentro de la palabra
 	else{
 		//Contador para sumar los intentos e ir pintando cada parte del monito ahorcado
-		var contadorM = parseInt(sessionStorage.getItem("contador")) + 1;
+		var contadorM = parseInt(gapi.hangout.data.getValue('contadorMalas')) + 1;
 		sessionStorage.setItem("contador",contadorM);
 	  	gapi.hangout.data.setValue("contadorMalas", contadorM.toString());
   		var sss= "err:"+letraIngresada;
 		//GAPI
 			gapi.hangout.data.setValue(sss, letraIngresada);
 		//
-alert(contador);
+alert(contadorM);
 		//Envío a todos los jugadores la letra que ingresaron
 		DibujaAhorcado(contadorM);
 	}
