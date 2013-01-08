@@ -252,22 +252,27 @@ h3{
 </style>
       <script src="https://hangoutsapi.talkgadget.google.com/hangouts/_/api/hangout.js?v=1.2"></script> 
       <script type="text/javascript" src= "https://raw.github.com/CharlyMcFly/downloads/master/ahorcado2/js/jquery-1.7.1.min.js"></script>
-
-    <script type="text/javascript">
+      
+      <script type="text/javascript">
 function init(){
 	gapi.hangout.onApiReady.add(function(){
 	//myEventHandlers();
+	alert("init");
 	var contaB= gapi.hangout.data.getValue('contadorBuenas');
 	var contaM= gapi.hangout.data.getValue('contadorMalas');
+	alert(contaB);
+	alert(contaM);
 	if(typeof contaB=="undefined"){
-		gapi.hangout.data.setValue("contadorBuenas","0");
+	alert("dentro 1,1");
+		gapi.hangout.data.setValue("contadorBuenas","0");alert("dentro1");
 	} else{
-	sessionStorage.setItem("palabra",parseInt(contaB));
+	sessionStorage.setItem("palabra",contaB);
 	} 
 	if(typeof contaM=="undefined"){
-		gapi.hangout.data.setValue("contadorMalas","0");
-			}else{
-  	sessionStorage.setItem("contador",parseInt(contaM));
+	alert("aaaa");
+		gapi.hangout.data.setValue("contadorMalas","0");alert("dentro2");
+	}else{
+  	sessionStorage.setItem("contador",contaM);
 	}
 	
 	generaLetras();
@@ -278,10 +283,13 @@ function init(){
 var respuesta = "";
 var longitud = 0;
 
+
 function CargaPreguntas(){
 	//Recupero una pregunta aleatoria de la BD 
 	var preg = gapi.hangout.data.getValue('pregunta');
-		if(typeof preg=="undefined"){	
+	
+		if(typeof preg=="undefined"){
+	
 		 $.getJSON('http://metaversoeducativo.net/sisFH/msicu/php/servicioPreguntas.php', function(data) {
 		 var palabra = "";
 		   	$.each(data.temario, function(indice, valor) {
@@ -329,6 +337,7 @@ function myEventHandlers(){
 	//gapi.hangout.data.onStateChanged.add();
 }
 
+
 function ValidaLetra(li){
 	//Recupero el valor de la letra que escribió el jugador
 	var letraIngresada = String(li);
@@ -355,7 +364,7 @@ function ValidaLetra(li){
 			//Contador que se va incrementando conforme haya letras que existan en la palabra
 			var contPalabra = parseInt(sessionStorage.getItem("palabra")) + 1;
 			sessionStorage.setItem("palabra",contPalabra);
-			gapi.hangout.data.setValue("contadorBuenas",contPalabra.toString());
+			gapi.hangout.data.setValue("contadorBuenas",contPalabra);
 			$("#l"+resp[i]).val(letraIngresada);
 			var eeee= (resp[i]).toString();
 			//GAPI
@@ -369,7 +378,8 @@ function ValidaLetra(li){
 		//Contador para sumar los intentos e ir pintando cada parte del monito ahorcado
 		var contador = parseInt(sessionStorage.getItem("contador")) + 1;
 		sessionStorage.setItem("contador",contador);
-		gapi.hangout.data.setValue("contadorMalas",contador.toString());
+
+
 		//Envío a todos los jugadores la letra que ingresaron
 		DibujaAhorcado(contador);
 	}
@@ -423,23 +433,26 @@ function DibujaAhorcado(contador){
 function aa(){
 var state = gapi.hangout.data.getState();
 $.each(state,function(indice,valor){
-//$("#l"+indice).val(valor);
-ValidaLetra(valor);
+$("#l"+indice).val(valor);
 });
 //CargaPreguntas();
-//ValidaGanado();
+ValidaGanado();
 }
+
 gapi.hangout.data.onStateChanged.add(function(stateChangeEvent) {
          aa();
 });
+
 gapi.hangout.onAppVisible.add(function() {
          CargaPreguntas();
-         aa();
 });
+
 //document.addEventListener("DOMContentLoaded",init);
 gapi.hangout.onApiReady.add(function(){
 setTimeout(init,2000);
-})
+}
+  
+)
       </script>
       <!-- application code -->
 	<div class="principal">
