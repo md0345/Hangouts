@@ -382,9 +382,9 @@ alert("ValidaLetra "+li);
 		var contadorM = parseInt(gapi.hangout.data.getValue('contadorMalas')) + 1;
 		sessionStorage.setItem("contador",contadorM);
 	  	gapi.hangout.data.setValue("contadorMalas", contadorM.toString());
-  		var sss += letraIngresada+"|";
+  		//var sss += letraIngresada+"|";
 		//GAPI
-			gapi.hangout.data.setValue(sss, letraIngresada);
+			gapi.hangout.data.setValue(letraIngresada, letraIngresada);
 		//
 		alert(contadorM);
 		//Envío a todos los jugadores la letra que ingresaron
