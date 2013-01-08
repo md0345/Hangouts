@@ -386,7 +386,7 @@ alert("ValidaLetra "+li);
   			letraIngresada: letraIngresada, 
  		});
 		//GAPI
-			gapi.hangout.data.setValue(sss, letraIngresada);
+			gapi.hangout.data.setValue(letraIngresada, letraIngresada);
 		//
 		alert(contadorM);
 		//Envío a todos los jugadores la letra que ingresaron
