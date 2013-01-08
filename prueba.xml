@@ -509,7 +509,7 @@ function aa(){
 	$.each(state,function(indice,valor){
 	alert(indice);
 	if(indice.length==5){
-	var letra = indice.substring(4)
+	var letra = indice.substring(4);
 	letra.addClass("Usado");
 	//ValidaLetra2(valor);
 	}
