@@ -257,21 +257,16 @@ h3{
 function init(){
 	gapi.hangout.onApiReady.add(function(){
 	//myEventHandlers();
-	alert("init");
 	var contaB= gapi.hangout.data.getValue('contadorBuenas');
 	var contaM= gapi.hangout.data.getValue('contadorMalas');
-	alert(contaB);
-	alert(contaM);
 	if(typeof contaB=="undefined"){
-	alert("dentro 1,1");
-		gapi.hangout.data.setValue("contadorBuenas","0");alert("dentro1");
+		gapi.hangout.data.setValue("contadorBuenas","0");
 	} else{
 	sessionStorage.setItem("palabra",parseInt(contaB));
 	} 
 	if(typeof contaM=="undefined"){
-	alert("aaaa");
-		gapi.hangout.data.setValue("contadorMalas","0");alert("dentro2");
-	}else{
+		gapi.hangout.data.setValue("contadorMalas","0");
+			}else{
   	sessionStorage.setItem("contador",parseInt(contaM));
 	}
 	
