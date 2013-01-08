@@ -510,6 +510,7 @@ function aa(){
 			}
 	}
 });
+}
 //CargaPreguntas();
 //ValidaGanado();
 }
