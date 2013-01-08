@@ -265,15 +265,15 @@ function init(){
 	if(typeof contaB=="undefined"){
 	alert("dentro 1,1");
 		gapi.hangout.data.setValue("contadorBuenas","0");alert("dentro1");
-	} else{
+	}/* else{
 	sessionStorage.setItem("palabra",contaB);
-	} 
+	} */
 	if(typeof contaM=="undefined"){
 	alert("aaaa");
 		gapi.hangout.data.setValue("contadorMalas","0");alert("dentro2");
-	}else{
+	}/*else{
   	sessionStorage.setItem("contador",contaM);
-	}
+	}*/
 	
 	generaLetras();
 	setTimeout(CargaPreguntas,2000);
@@ -436,7 +436,7 @@ $.each(state,function(indice,valor){
 $("#l"+indice).val(valor);
 });
 //CargaPreguntas();
-ValidaGanado();
+//ValidaGanado();
 }
 
 gapi.hangout.data.onStateChanged.add(function(stateChangeEvent) {
