@@ -387,7 +387,7 @@ function ValidaLetra(li){
 		//GAPI
 			gapi.hangout.data.setValue(sss, letraIngresada);
 		//
-alert(contadorM);
+alert(contador);
 		//Envío a todos los jugadores la letra que ingresaron
 		DibujaAhorcado(contadorM);
 	}
