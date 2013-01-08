@@ -248,8 +248,8 @@ h3{
 	color: #0055A4;
     font: 15px Sans-serif;
 }
-
 </style>
+ 
       <script src="https://hangoutsapi.talkgadget.google.com/hangouts/_/api/hangout.js?v=1.2"></script> 
       <script type="text/javascript" src= "https://raw.github.com/CharlyMcFly/downloads/master/ahorcado2/js/jquery-1.7.1.min.js"></script>
       
@@ -265,12 +265,12 @@ function init(){
 	
 		gapi.hangout.data.setValue("contadorBuenas","0");
 	} else{
-	sessionStorage.setItem("palabra",contaB);
+	sessionStorage.setItem("palabra",parseInt(contaB));
 	} 
 	if(typeof contaM=="undefined"){
 			gapi.hangout.data.setValue("contadorMalas","0");
 	}else{
-  	sessionStorage.setItem("contador",contaM);
+  	sessionStorage.setItem("contador",parseInt(contaM));
 	}
 	
 	generaLetras();
@@ -364,6 +364,10 @@ function ValidaLetra(li){
 			//Contador que se va incrementando conforme haya letras que existan en la palabra
 			var contPalabra = parseInt(sessionStorage.getItem("palabra")) + 1;
 			sessionStorage.setItem("palabra",contPalabra);
+			//GAPI
+			gapi.hangout.data.setValue("contadorBuenas",contPalabra.toString());
+  		
+
 			$("#l"+resp[i]).val(letraIngresada);
 			var eeee= (resp[i]).toString();
 			//GAPI
@@ -375,8 +379,9 @@ function ValidaLetra(li){
 	//Si la letra NO existe dentro de la palabra
 	else{
 		//Contador para sumar los intentos e ir pintando cada parte del monito ahorcado
-		var contador = parseInt(sessionStorage.getItem("contador")) + 1;
-		sessionStorage.setItem("contador",contador);
+		var contadorM = parseInt(sessionStorage.getItem("contador")) + 1;
+		sessionStorage.setItem("contador",contadorM);
+	  	gapi.hangout.data.setValue("contadorMalas", contadorM.toString());
 
 
 		//Envío a todos los jugadores la letra que ingresaron
@@ -411,6 +416,7 @@ function ValidaLetra2(li){
 			//Contador que se va incrementando conforme haya letras que existan en la palabra
 			var contPalabra = parseInt(sessionStorage.getItem("palabra")) + 1;
 			sessionStorage.setItem("palabra",contPalabra);
+
 			$("#l"+resp[i]).val(letraIngresada);
 			var eeee= (resp[i]).toString();
 			
@@ -421,6 +427,7 @@ function ValidaLetra2(li){
 	else{
 		//Contador para sumar los intentos e ir pintando cada parte del monito ahorcado
 		var contador = parseInt(sessionStorage.getItem("contador")) + 1;
+		alert("contadorAntesdeDibujar" +contador);
 		sessionStorage.setItem("contador",contador);
 		//Envío a todos los jugadores la letra que ingresaron
 		DibujaAhorcado(contador);
@@ -430,7 +437,8 @@ function ValidaLetra2(li){
 //
 function ValidaGanado(){
 	//Valida si el valor del contador es igual a la longitud de la palabra a adivinar para indicar que ya ganó y deneter el juego
-	if(sessionStorage.getItem("palabra") == window.longitud){
+
+	if(gapi.hangout.data.getValue('contadorBuenas') == window.longitud){
 		$("#ContenedorAbecedario").hide();
 		$("#resultado").show();
 		$("#resultado").html("Ganaste :)");
