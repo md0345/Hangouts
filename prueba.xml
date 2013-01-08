@@ -568,7 +568,7 @@ function aa(){
 			break;
 			default: $("#monito").show();	
 		}
-		else{
+		]else{
 			ValidaLetra2(valor);
 		}
 	});
