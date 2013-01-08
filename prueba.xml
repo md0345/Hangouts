@@ -385,7 +385,7 @@ function ValidaLetra(li){
 		//GAPI
 			gapi.hangout.data.setValue(sss, letraIngresada);
 		//
-alert(contadorM);
+		alert(contadorM);
 		//Envío a todos los jugadores la letra que ingresaron
 		DibujaAhorcado(contadorM);
 	}
@@ -448,6 +448,7 @@ function ValidaGanado(){
 }
 
 function DibujaAhorcado(contador){
+alert(contador);
 	switch(contador){
 		case 1: 
 			//dibuja la cabeza
