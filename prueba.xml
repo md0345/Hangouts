@@ -260,7 +260,7 @@ function init(){
 	
 	var contaB= gapi.hangout.data.getValue('contadorBuenas');
 	var contaM= gapi.hangout.data.getValue('contadorMalas');
-	alert("contaM"+contaM);
+	//alert("contaM"+contaM);
 	if(typeof contaB=="undefined"){
 	
 		gapi.hangout.data.setValue("contadorBuenas","0");
@@ -386,7 +386,7 @@ alert("ValidaLetra "+li);
 		//GAPI
 			gapi.hangout.data.setValue("err_"+letraIngresada,letraIngresada);
 		//
-		alert(contadorM);
+		
 		//Envío a todos los jugadores la letra que ingresaron
 		DibujaAhorcado(contadorM);
 	}
@@ -397,7 +397,7 @@ function recorreError(){
 	letrasErroneas = gapi.hangout.data.getState();
 		$.each(letrasErroneas,function(indice, valor){
 			if(indice.match(/err_.*/)){
-			alert("indice");
+			
 				ValidaLetra3(valor);
 			}else{
 			ValidaLetra2(valor);
@@ -452,7 +452,7 @@ function ValidaLetra3(li){
 		//GAPI
 			gapi.hangout.data.setValue("err_"+letraIngresada,letraIngresada);
 		//
-		alert(contadorM);
+		//alert(contadorM);
 		//Envío a todos los jugadores la letra que ingresaron
 		DibujaAhorcado(contadorM);
 }
@@ -471,7 +471,7 @@ function ValidaGanado(){
 }
 
 function DibujaAhorcado(contador){
-alert(contador);
+
 	switch(contador){
 		case 1: 
 			//dibuja la cabeza
