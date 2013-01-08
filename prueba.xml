@@ -510,32 +510,33 @@ function aa(){
 	alert(indice);
 	if(indice=="monito"){
 	alert("CM: "+valor);
+
 		switch(valor){
-		case 1: 
+		case "1": 
 			//dibuja la cabeza
 			alert("dibujo Cab?");
 			$("#cabeza").show();
 			alert("Si Cab");
 			break;
-		case 2: 
+		case "2": 
 			//dibuja el tronco
 			$("#cabeza").show();
 			$("#tronco").show();
 		break;
-		case 3:
+		case "3":
 			//dibuja el brazo izquierdo
 			$("#cabeza").show();
 			$("#tronco").show();
 			$("#brazoizquierdo").show();
 		break;
-		case 4:
+		case "4":
 			//dibuja el brazo derecho
 			$("#cabeza").show();
 			$("#tronco").show();
 			$("#brazoizquierdo").show();
 			$("#brazoderecho").show();
 		break;
-		case 5:
+		case "5":
 					$("#cabeza").show();
 			$("#tronco").show();
 			$("#brazoizquierdo").show();
@@ -544,7 +545,7 @@ function aa(){
 			$("#pieizquierdo").show();
 			 
 		break;
-		case 6:
+		case "6":
 			//dibuja la pierna derecha y pierde
 			$("#cabeza").show();
 			$("#tronco").show();
