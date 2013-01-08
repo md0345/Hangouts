@@ -315,6 +315,7 @@ function CargaPreguntas(){
 		 		$("#Palabra").append(gapi.hangout.data.getValue('palabra'));
 		 		$("#Pregunta").empty();
 		 		$("#Pregunta").append(gapi.hangout.data.getValue('pregunta'));
+		 		aa();
 		 }
 }
 
@@ -450,8 +451,7 @@ gapi.hangout.onAppVisible.add(function() {
 //document.addEventListener("DOMContentLoaded",init);
 gapi.hangout.onApiReady.add(function(){
 setTimeout(init,2000);
-aa();
-alert("API READY")
+
 }
  
 )
