@@ -287,9 +287,9 @@ var longitud = 0;
 function CargaPreguntas(){
 	//Recupero una pregunta aleatoria de la BD 
 	var preg = gapi.hangout.data.getValue('pregunta');
-	
+		
 		if(typeof preg=="undefined"){
-	
+		
 		 $.getJSON('http://metaversoeducativo.net/sisFH/msicu/php/servicioPreguntas.php', function(data) {
 		 var palabra = "";
 		   	$.each(data.temario, function(indice, valor) {
@@ -318,6 +318,7 @@ function CargaPreguntas(){
 		 		$("#Pregunta").append(gapi.hangout.data.getValue('pregunta'));
 		 }
 }
+
 var abecedario = new Array();
 function generaLetras(){
 	abecedario = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "ñ", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
@@ -364,7 +365,6 @@ function ValidaLetra(li){
 			//Contador que se va incrementando conforme haya letras que existan en la palabra
 			var contPalabra = parseInt(sessionStorage.getItem("palabra")) + 1;
 			sessionStorage.setItem("palabra",contPalabra);
-			gapi.hangout.data.setValue("contadorBuenas",contPalabra);
 			$("#l"+resp[i]).val(letraIngresada);
 			var eeee= (resp[i]).toString();
 			//GAPI
