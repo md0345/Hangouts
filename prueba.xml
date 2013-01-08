@@ -395,7 +395,7 @@ alert("ValidaLetra "+li);
 
 
 function ValidaLetra2(li){
-//alert("Valida2")
+alert("Valida2")
 	//Recupero el valor de la letra que escribió el jugador
 	var letraIngresada = String(li);
 	
@@ -507,13 +507,13 @@ function DibujaAhorcado(contador){
 function aa(){
 	var state = gapi.hangout.data.getState();
 	$.each(state,function(indice,valor){
+	alert(indice);
 	if(indice.lengt==5){
-	var letra= indice.substring(4);
-	letra.addClass("Usado");
-	//ValidaLetra2(valor);
+	//indice.substring(4)
+	ValidaLetra2(valor);
 	}
 	if(indice=="monito"){
-//	alert("CM: "+valor);
+	alert("CM: "+valor);
 
 		switch(valor){
 		case "1": 
@@ -576,7 +576,7 @@ function aa(){
 }
 
 gapi.hangout.data.onStateChanged.add(function(stateChangeEvent) {
-	setTimeout(aa,2000);
+         aa();
 });
 
 gapi.hangout.onAppVisible.add(function() {
