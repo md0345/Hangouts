@@ -395,8 +395,9 @@ alert("ValidaLetra "+li);
 //Función para recorrer las letras erróneas
 function recorreError(){
 	letrasErroneas = gapi.hangout.data.getState();
-if(typeof letrasErroneas !="undefined"){
+	if(typeof letrasErroneas !="undefined"){
 	$.each(letrasErroneas,function(indice, valor){
+	alert(indice);
 		if(indice.match(/err_.*/){
 			ValidaLetra2(valor);
 		}
@@ -492,6 +493,11 @@ function aa(){
 	var state = gapi.hangout.data.getState();
 	$.each(state,function(indice,valor){
 	//$("#l"+indice).val(valor);
+		ValidaLetra2(valor);
+		if(indice.match(/err_.*/){
+		//	ValidaLetra2(valor);
+		}
+
 	recorreError();
 });
 //CargaPreguntas();
