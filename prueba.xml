@@ -254,30 +254,30 @@ h3{
       <script type="text/javascript" src= "https://raw.github.com/CharlyMcFly/downloads/master/ahorcado2/js/jquery-1.7.1.min.js"></script>
       
       <script type="text/javascript">
+
 function init(){
 	gapi.hangout.onApiReady.add(function(){
-	//myEventHandlers();
-alert("INIT");	
-	var contaB= gapi.hangout.data.getValue('contadorBuenas');
-	var contaM= gapi.hangout.data.getValue('contadorMalas');
-	alert(contaM);
-	if(typeof contaB=="undefined"){
-		gapi.hangout.data.setValue("contadorBuenas","0");
-	} else{
-	sessionStorage.setItem("palabra",contaB);
-	}
+		//myEventHandlers();
+		alert("INIT");	
+		var contaB= gapi.hangout.data.getValue('contadorBuenas');
+		var contaM= gapi.hangout.data.getValue('contadorMalas');
+		alert(contaM);
+		if(typeof contaB=="undefined"){
+			gapi.hangout.data.setValue("contadorBuenas","0");
+		} else{
+			sessionStorage.setItem("palabra",contaB);
+		}
 	
 	if(typeof contaM=="undefined"){
-	alert(contaM);
+		alert(contaM);
 		gapi.hangout.data.setValue("contadorMalas","0");
 	}else{
-	alert("sseion");
-  	sessionStorage.setItem("contador",contaM);
+		alert("sseion");
+  		sessionStorage.setItem("contador",contaM);
 	}
 	
 	generaLetras();
 	setTimeout(CargaPreguntas,2000);
-});
 }
 
 var respuesta = "";
