@@ -445,6 +445,7 @@ gapi.hangout.data.onStateChanged.add(function(stateChangeEvent) {
 
 gapi.hangout.onAppVisible.add(function() {
          CargaPreguntas();
+         aa();
 });
 
 //document.addEventListener("DOMContentLoaded",init);
