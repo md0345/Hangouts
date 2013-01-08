@@ -382,11 +382,9 @@ alert("ValidaLetra "+li);
 		var contadorM = parseInt(gapi.hangout.data.getValue('contadorMalas')) + 1;
 		sessionStorage.setItem("contador",contadorM);
 	  	gapi.hangout.data.setValue("contadorMalas", contadorM.toString());
-  		gapi.hangout.data.submitDelta({
-  			letraIngresada: letraIngresada, 
- 		});
+  		
 		//GAPI
-			gapi.hangout.data.setValue("err_"+letraIngresada, letraIngresada);
+			gapi.hangout.data.setValue("err_"+letraIngresada,letraIngresada);
 		//
 		alert(contadorM);
 		//Envío a todos los jugadores la letra que ingresaron
@@ -396,9 +394,11 @@ alert("ValidaLetra "+li);
 
 //Función para recorrer las letras erróneas
 function recorreError(){
-	letrasErroneas = gapi.hangout.data.setValue();
+	letrasErroneas = gapi.hangout.data.getState();
 	$.each(letrasErroneas,function(indice, valor){
-		ValidaLetra2(valor);
+		if(indice.match(/err_.*/){
+			ValidaLetra2(valor);
+		}
 	});
 }
 
@@ -487,10 +487,10 @@ alert(contador);
 	}
 }
 function aa(){
-var state = gapi.hangout.data.getState();
-$.each(state,function(indice,valor){
-//$("#l"+indice).val(valor);
-ValidaLetra2(valor);
+	var state = gapi.hangout.data.getState();
+	$.each(state,function(indice,valor){
+	//$("#l"+indice).val(valor);
+	recorreError();
 });
 //CargaPreguntas();
 //ValidaGanado();
