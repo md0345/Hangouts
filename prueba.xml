@@ -501,7 +501,7 @@ function DibujaAhorcado(contador){
 function aa(){
 	var state = gapi.hangout.data.getState();
 	$.each(state,function(indice,valor){
-	while(state.hasOwnProperty()){
+	if(state.hasOwnProperty()){
 
 	if(indice.match(/err_.*/).length > 1){
 			ValidaLetra3(valor);
@@ -510,7 +510,6 @@ function aa(){
 			}
 	}
 });
-}
 //CargaPreguntas();
 //ValidaGanado();
 }
