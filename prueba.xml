@@ -510,8 +510,8 @@ function aa(){
 		//alert(indice);
 		if(indice.length==5){
 			var letra = indice.substring(4);
-			$("#"+letra).addClass("Usado");
-			//ValidaLetra2(valor);
+			//$("#"+letra).addClass("Usado");
+			ValidaLetra2(valor);
 		}
 		if(indice=="monito"){
 			//alert("CM: "+valor);
