@@ -395,12 +395,11 @@ alert("ValidaLetra "+li);
 //Función para recorrer las letras erróneas
 function recorreError(){
 	letrasErroneas = gapi.hangout.data.getState();
-	
 		$.each(letrasErroneas,function(indice, valor){
-			
 			if(indice.match(/err_.*/)){
-			//	ValidaLetra2(valor);
-			alert("a");
+				ValidaLetra3(valor);
+			}else{
+			ValidaLetra2(valor);
 			}
 		});
 	
@@ -442,6 +441,22 @@ function ValidaLetra2(li){
 		}	
 	}
 }
+function ValidaLetra3(li){
+
+		//Contador para sumar los intentos e ir pintando cada parte del monito ahorcado
+		var contadorM = parseInt(gapi.hangout.data.getValue('contadorMalas')) + 1;
+		sessionStorage.setItem("contador",contadorM);
+	  	gapi.hangout.data.setValue("contadorMalas", contadorM.toString());
+
+		//GAPI
+			gapi.hangout.data.setValue("err_"+letraIngresada,letraIngresada);
+		//
+		alert(contadorM);
+		//Envío a todos los jugadores la letra que ingresaron
+		DibujaAhorcado(contadorM);
+}
+
+
 
 //
 function ValidaGanado(){
