@@ -451,8 +451,9 @@ gapi.hangout.onAppVisible.add(function() {
 gapi.hangout.onApiReady.add(function(){
 setTimeout(init,2000);
 aa();
+alert("API READY")
 }
-  
+ 
 )
       </script>
       <!-- application code -->
