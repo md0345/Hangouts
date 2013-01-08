@@ -395,7 +395,7 @@ alert("ValidaLetra "+li);
 
 
 function ValidaLetra2(li){
-alert("Valida2")
+//alert("Valida2")
 	//Recupero el valor de la letra que escribió el jugador
 	var letraIngresada = String(li);
 	
@@ -513,7 +513,7 @@ function aa(){
 	//ValidaLetra2(valor);
 	}
 	if(indice=="monito"){
-	alert("CM: "+valor);
+//	alert("CM: "+valor);
 
 		switch(valor){
 		case "1": 
