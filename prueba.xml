@@ -577,7 +577,7 @@ function aa(){
 }
 
 gapi.hangout.data.onStateChanged.add(function(stateChangeEvent) {
-         aa();
+         setTimeout(aa,2000);
 });
 
 gapi.hangout.onAppVisible.add(function() {
