@@ -264,15 +264,14 @@ function init(){
 	if(typeof contaB=="undefined"){
 	
 		gapi.hangout.data.setValue("contadorBuenas","0");
-	}/* else{
+	} else{
 	sessionStorage.setItem("palabra",contaB);
-	} */
+	} 
 	if(typeof contaM=="undefined"){
-	
-		gapi.hangout.data.setValue("contadorMalas","0");
-	}/*else{
+			gapi.hangout.data.setValue("contadorMalas","0");
+	}else{
   	sessionStorage.setItem("contador",contaM);
-	}*/
+	}
 	
 	generaLetras();
 	setTimeout(CargaPreguntas,2000);
