@@ -395,15 +395,14 @@ alert("ValidaLetra "+li);
 //Función para recorrer las letras erróneas
 function recorreError(){
 	letrasErroneas = gapi.hangout.data.getState();
-	if(letrasErroneas.hasOwnProperty()){
-	alert("tieneOwn")
+	
 		$.each(letrasErroneas,function(indice, valor){
 			alert(indice);
 			//if(indice.match(/err_.*/){
 			//	ValidaLetra2(valor);
 			//}
 		});
-	}
+	
 	
 }
 
