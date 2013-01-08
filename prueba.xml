@@ -451,30 +451,26 @@ function DibujaAhorcado(contador){
 			//dibuja el tronco
 			$("#tronco").show();
 			gapi.hangout.data.setValue("pregunta","1");
-		 		});
-		break;
+		 break;
 		case 3:
 			//dibuja el brazo izquierdo
 			$("#brazoizquierdo").show();
 			gapi.hangout.data.setValue("cab","1");
-		 		});
+		 	
 		break;
 		case 4:
 			//dibuja el brazo derecho
 			$("#brazoderecho").show();
 			gapi.hangout.data.setValue("cab","1");
-		 		});
-		break;
+		 break;
 		case 5:
 			//dibuja la pierna izquierda
 			$("#pieizquierdo").show();
 			gapi.hangout.data.setValue("cab","1");
-		 		});
 		break;
 		case 6:
 			//dibuja la pierna derecha y pierde
 			gapi.hangout.data.setValue("cab","1");
-		 		});
 			$("#piederecho").show();
 			$("#ContenedorAbecedario").hide();
 			$("#resultado").show();
