@@ -508,7 +508,7 @@ function aa(){
 	var state = gapi.hangout.data.getState();
 	$.each(state,function(indice,valor){
 	alert(indice);
-	if(indice=="contadorMalas"){
+	if(indice=="monito"){
 	alert("CM: "+valor);
 		switch(valor){
 		case 1: 
