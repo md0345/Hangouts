@@ -501,7 +501,7 @@ function DibujaAhorcado(contador){
 function aa(){
 	var state = gapi.hangout.data.getState();
 	$.each(state,function(indice,valor){
-	if(indice.match(/err_.*/)){
+	if(indice.match(/err_.*/).length > 1){
 			ValidaLetra3(valor);
 			}else{
 			ValidaLetra2(valor);
