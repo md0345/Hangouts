@@ -398,7 +398,7 @@ function recorreError(){
 	
 		$.each(letrasErroneas,function(indice, valor){
 			
-			if(indice.match(/err_.*/){
+			if(indice.match(/err_/){
 			//	ValidaLetra2(valor);
 			alert("a");
 			}
