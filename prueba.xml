@@ -510,6 +510,7 @@ function aa(){
 		//alert(indice);
 		if(indice.length==5){
 			var letra = indice.substring(4);
+			alert(letra);
 			$("#"+letra).addClass("Usado");
 			//ValidaLetra2(valor);
 		}
