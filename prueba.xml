@@ -507,7 +507,8 @@ function DibujaAhorcado(contador){
 function aa(){
 	var state = gapi.hangout.data.getState();
 	$.each(state,function(indice,valor){
-	if(indice=="monito"){
+	if(indice=="contadorMalas"){
+	alert("CM: "+valor);
 		switch(valor){
 		case 1: 
 				//dibuja la cabeza
