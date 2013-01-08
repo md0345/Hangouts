@@ -507,7 +507,7 @@ function DibujaAhorcado(contador){
 function aa(){
 	var state = gapi.hangout.data.getState();
 	$.each(state,function(indice,valor){
-		//alert(indice);
+		alert(indice);
 		//if(indice.length==5){
 		//	var letra = indice.substring(4);
 		////	$("#"+letra).addClass("Usado");
