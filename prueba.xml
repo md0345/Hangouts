@@ -508,6 +508,10 @@ function aa(){
 	var state = gapi.hangout.data.getState();
 	$.each(state,function(indice,valor){
 	alert(indice);
+	if(indice.lengt==5){
+	//indice.substring(4)
+	ValidaLetra2(valor);
+	}
 	if(indice=="monito"){
 	alert("CM: "+valor);
 
