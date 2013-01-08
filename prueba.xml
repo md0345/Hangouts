@@ -399,9 +399,9 @@ function recorreError(){
 	alert("tieneOwn")
 		$.each(letrasErroneas,function(indice, valor){
 			alert(indice);
-			if(indice.match(/err_.*/){
-				ValidaLetra2(valor);
-			}
+			//if(indice.match(/err_.*/){
+			//	ValidaLetra2(valor);
+			//}
 		});
 	}
 	
