@@ -491,16 +491,12 @@ ValidaLetra2(valor);
 //CargaPreguntas();
 //ValidaGanado();
 }
-
 gapi.hangout.data.onStateChanged.add(function(stateChangeEvent) {
          aa();
 });
-
 gapi.hangout.onAppVisible.add(function() {
          CargaPreguntas();
-
 });
-
 //document.addEventListener("DOMContentLoaded",init);
 gapi.hangout.onApiReady.add(function(){
 setTimeout(init,2000);});
