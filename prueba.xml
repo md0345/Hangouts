@@ -533,14 +533,12 @@ function aa(){
 	var state = gapi.hangout.data.getState();
 	$.each(state, function(indice,valor){
 		if (indice.match(/err.*/)) {
-			alert("err: "+valor);
 	    		letra = valor;
 	    		$("#"+letra).addClass("Usado");
 	  	}
 		
 		
 		if(indice == "monito"){
-			alert("monito: "+valor);
 	
 			switch(valor){
 				case "1": 
