@@ -427,8 +427,9 @@ function ValidaGanado(){
 	var contador=0;
 	var state2 = gapi.hangout.data.getState();
 	$.each(state2, function(indice,valor){
-	if(indice.length == 1) {	
-		contador++;
+		if(indice.length == 1) {	
+			contador++;
+			alert(contador);
 		}
 	});
 	if(contador == gapi.hangout.data.getValue('respuesta').length){
