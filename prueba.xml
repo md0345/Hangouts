@@ -415,11 +415,6 @@ function ValidaLetra2(li){
 	if(resp != -1){
 		pos = resp.length;
 		for(i=0;i<pos;i++){
-			//Contador que se va incrementando conforme haya letras que existan en la palabra
-			var contPalabra = parseInt(sessionStorage.getItem("palabra")) + 1;
-			sessionStorage.setItem("palabra",contPalabra);
-			gapi.hangout.data.setValue("contadorBuenas",contPalabra.toString());
-			
 			$("#l"+resp[i]).val(letraIngresada);
 			var eeee= (resp[i]).toString();
 			
