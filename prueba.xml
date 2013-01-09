@@ -260,11 +260,7 @@ function init(){
 	
 	var contaB= gapi.hangout.data.getValue('contadorBuenas');
 	var contaM= gapi.hangout.data.getValue('contadorMalas');
-	var contaL= gapi.hangout.data.getValue('contadorLetras');
-	if(typeof contaL=="undefined"){
-		gapi.hangout.data.setValue("contadorLetras","0");
-	}
-	//alert("contaM"+contaM);
+	
 	if(typeof contaB=="undefined"){
 		gapi.hangout.data.setValue("contadorBuenas","0");
 	} else{
@@ -426,27 +422,16 @@ function ValidaLetra2(li){
 		}	
 	}
 }
-
-function ValidaLetra3(li){
-	//Contador para sumar los intentos e ir pintando cada parte del monito ahorcado
-	var contadorM = parseInt(gapi.hangout.data.getValue('contadorMalas')) + 1;
-	sessionStorage.setItem("contador",contadorM);
-	//GAPI
-  		gapi.hangout.data.setValue("contadorMalas", contadorM.toString());
-		gapi.hangout.data.setValue("err_"+letraIngresada,letraIngresada);
-	//
-	//alert(contadorM);
-	//Envío a todos los jugadores la letra que ingresaron
-	//DibujaAhorcado(contadorM);
-}
-
-
-
-//
 function ValidaGanado(){
 	//Valida si el valor del contador es igual a la longitud de la palabra a adivinar para indicar que ya ganó y deneter el juego
-	alert("dentroValGanado: CL= "+gapi.hangout.data.getValue('contadorLetras'));
-	if(gapi.hangout.data.getValue('contadorLetras') == gapi.hangout.data.getValue('respuesta').length){
+	var contador=0;
+	var state2 = gapi.hangout.data.getState();
+	$.each(state2, function(indice,valor){
+	if(indice.length == 1) {	
+		contador++;
+		}
+	});
+	if(contador == gapi.hangout.data.getValue('respuesta').length){
 		$("#ContenedorAbecedario").hide();
 		$("#resultado").show();
 		$("#resultado").html("Ganaste :)");
@@ -591,12 +576,7 @@ function aa(){
 			}
 		}
 		
-		if(indice.length == 1) {
-		
-			var contL=parseInt(gapi.hangout.data.getValue('contadorLetras'));
-			contL++;
-			gapi.hangout.data.setValue("contadorLetras",contL.toString());
-			
+		if(indice.length == 1) {	
 			ValidaLetra2(valor);
 		}
 	});
