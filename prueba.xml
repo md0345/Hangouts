@@ -419,7 +419,8 @@ function ValidaLetra2(li){
 			//Contador que se va incrementando conforme haya letras que existan en la palabra
 			var contPalabra = parseInt(sessionStorage.getItem("palabra")) + 1;
 			sessionStorage.setItem("palabra",contPalabra);
-
+			gapi.hangout.data.setValue("contadorBuenas",contPalabra.toString());
+			
 			$("#l"+resp[i]).val(letraIngresada);
 			var eeee= (resp[i]).toString();
 			
@@ -432,8 +433,8 @@ function ValidaLetra3(li){
 	//Contador para sumar los intentos e ir pintando cada parte del monito ahorcado
 	var contadorM = parseInt(gapi.hangout.data.getValue('contadorMalas')) + 1;
 	sessionStorage.setItem("contador",contadorM);
-  	gapi.hangout.data.setValue("contadorMalas", contadorM.toString());
 	//GAPI
+  		gapi.hangout.data.setValue("contadorMalas", contadorM.toString());
 		gapi.hangout.data.setValue("err_"+letraIngresada,letraIngresada);
 	//
 	//alert(contadorM);
@@ -538,6 +539,14 @@ function aa(){
 		////	$("#"+letra).addClass("Usado");
 			//ValidaLetra2(valor);
 		//}
+		for (var name in state) {
+		  if (name.match(/err.*/)) {
+		    letra = state.name;
+		    $("#"+letra).addClass("Usado");
+		  }
+		}
+		
+		
 		if(indice=="monito"){
 			//alert("CM: "+valor);
 	
