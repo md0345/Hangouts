@@ -533,6 +533,7 @@ function DibujaAhorcado(contador){
 function aa(){
 	var state = gapi.hangout.data.getState();
 	$.each(state,function(indice,valor){
+		alert("indice: "+indice+" valor: "+valor);
 		if (indice.match(/err.*/)) {
 	    		letra = valor;
 	    		$("#"+letra).addClass("Usado");
@@ -566,7 +567,7 @@ function aa(){
 					$("#brazoderecho").show();
 				break;
 				case "5":
-							$("#cabeza").show();
+					$("#cabeza").show();
 					$("#tronco").show();
 					$("#brazoizquierdo").show();
 					$("#brazoderecho").show();
@@ -611,7 +612,7 @@ gapi.hangout.onAppVisible.add(function() {
 
 //document.addEventListener("DOMContentLoaded",init);
 gapi.hangout.onApiReady.add(function(){
-	setTimeout(init,1000);
+	setTimeout(init,2000);
 }
  
 )
