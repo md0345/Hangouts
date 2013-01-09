@@ -533,15 +533,15 @@ function DibujaAhorcado(contador){
 function aa(){
 	var state = gapi.hangout.data.getState();
 	$.each(state,function(indice,valor){
-		alert("indice: "+indice+" valor: "+valor);
 		if (indice.match(/err.*/)) {
+			alert("indice: "+indice+" valor: "+valor);
 	    		letra = valor;
 	    		$("#"+letra).addClass("Usado");
 	  	}
 		
 		
 		if(indice == "monito"){
-			//alert("CM: "+valor);
+			alert("indice: "+indice+" valor: "+valor);
 	
 			switch(valor){
 				case "1": 
