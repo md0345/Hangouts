@@ -361,7 +361,7 @@ function ValidaLetra(li){
 		pos = resp.length;
 		for(i=0;i<pos;i++){
 			//Contador que se va incrementando conforme haya letras que existan en la palabra
-			var contPalabra = parseInt(sessionStorage.getItem("palabra")) + 1;
+			var contPalabra = parseInt(gapi.hangout.data.getValue('contadorBuenas')) + 1;
 			sessionStorage.setItem("palabra",contPalabra);
 			$("#l"+resp[i]).val(letraIngresada);
 			//GAPI
