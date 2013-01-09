@@ -366,7 +366,7 @@ function ValidaLetra(li){
 			sessionStorage.setItem("palabra",contPalabra);
 			$("#l"+resp[i]).val(letraIngresada);
 			//GAPI
-			gapi.hangout.data.setValue("contadorBuenas",contPalabra);
+			gapi.hangout.data.setValue("contadorBuenas",contPalabra.toString());
 			var eeee= (resp[i]).toString();
 			//GAPI
 			gapi.hangout.data.setValue(eeee,letraIngresada);
@@ -378,10 +378,10 @@ function ValidaLetra(li){
 	else{
 		//Contador para sumar los intentos e ir pintando cada parte del monito ahorcado
 		var contadorM = parseInt(sessionStorage.getItem("contador")) + 1;
-				
+		alert contadorM;		
 		//var contadorM = parseInt(gapi.hangout.data.getValue('contadorMalas')) + 1;
 		sessionStorage.setItem("contador",contadorM);
-	  	gapi.hangout.data.setValue("contadorMalas", contadorM);
+	  	gapi.hangout.data.setValue("contadorMalas", contadorM.toString());
 
 		//GAPI
 			gapi.hangout.data.setValue("err_"+letraIngresada,letraIngresada);
@@ -431,12 +431,11 @@ function ValidaLetra2(li){
 }
 
 function ValidaLetra3(li){
-	alert("Valida3")
 	//Contador para sumar los intentos e ir pintando cada parte del monito ahorcado
 	var contadorM = parseInt(gapi.hangout.data.getValue('contadorMalas')) + 1;
 	sessionStorage.setItem("contador",contadorM);
-  	gapi.hangout.data.setValue("contadorMalas", contadorM);
-
+  	gapi.hangout.data.setValue("contadorMalas", contadorM.toString());
+	alert(contadorM);
 	//GAPI
 		gapi.hangout.data.setValue("err_"+letraIngresada,letraIngresada);
 	//
