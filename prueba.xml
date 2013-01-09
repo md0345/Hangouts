@@ -260,6 +260,10 @@ function init(){
 	
 	var contaB= gapi.hangout.data.getValue('contadorBuenas');
 	var contaM= gapi.hangout.data.getValue('contadorMalas');
+	var contaL= gapi.hangout.data.getValue('contadorLetras');
+	if(typeof contaL=="undefined"){
+		gapi.hangout.data.setValue("contadorLetras","0");
+	}
 	//alert("contaM"+contaM);
 	if(typeof contaB=="undefined"){
 		gapi.hangout.data.setValue("contadorBuenas","0");
@@ -588,16 +592,10 @@ function aa(){
 		}
 		
 		if(indice.length == 1) {
-			var contaL= gapi.hangout.data.getValue('contadorLetras');
-			if(typeof contaL=="undefined"){
-				alert("contaL es undefined");
-				gapi.hangout.data.setValue("contadorLetras","0");
-			}else{
-			alert("Tiene valor y es: " +gapi.hangout.data.getValue('contadorLetras'));
+		
 			var contL=parseInt(contaL);
 			contL++;
 			gapi.hangout.data.setValue("contadorLetras",contL.toString());
-			}
 			
 			ValidaLetra2(valor);
 		}
