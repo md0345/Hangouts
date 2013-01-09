@@ -424,13 +424,16 @@ function ValidaLetra2(li){
 }
 function ValidaGanado(){
 	//Valida si el valor del contador es igual a la longitud de la palabra a adivinar para indicar que ya ganó y deneter el juego
+	var keys = [];
 	var contador=0;
 	var state2 = gapi.hangout.data.getState();
 	$.each(state2, function(indice,valor){
 		if(indice.length == 1) {	
-			contador++;
+			keys.push(indice); 
 		}
 	});
+	contador = keys.length;
+	
 	if(contador == gapi.hangout.data.getValue('respuesta').length){
 		$("#ContenedorAbecedario").hide();
 		$("#resultado").show();
