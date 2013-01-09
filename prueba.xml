@@ -429,7 +429,6 @@ function ValidaGanado(){
 	$.each(state2, function(indice,valor){
 		if(indice.length == 1) {	
 			contador++;
-			alert(contador);
 		}
 	});
 	if(contador == gapi.hangout.data.getValue('respuesta').length){
