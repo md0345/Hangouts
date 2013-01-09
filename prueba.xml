@@ -593,7 +593,7 @@ function aa(){
 		
 		if(indice.length == 1) {
 		
-			var contL=parseInt(contaL);
+			var contL=parseInt(gapi.hangout.data.getValue('contadorLetras'));
 			contL++;
 			gapi.hangout.data.setValue("contadorLetras",contL.toString());
 			
