@@ -532,16 +532,16 @@ function DibujaAhorcado(contador){
 
 function aa(){
 	var state = gapi.hangout.data.getState();
-	$.each(state,function(indice,valor){
+	$.each(state, function(indice,valor){
 		if (indice.match(/err.*/)) {
-			alert("indice: "+indice+" valor: "+valor);
+			alert("err: "+valor);
 	    		letra = valor;
 	    		$("#"+letra).addClass("Usado");
 	  	}
 		
 		
 		if(indice == "monito"){
-			alert("indice: "+indice+" valor: "+valor);
+			alert("monito: "+valor);
 	
 			switch(valor){
 				case "1": 
@@ -597,8 +597,6 @@ function aa(){
 			ValidaLetra2(valor);
 		}
 	});
-	//CargaPreguntas();
-	//ValidaGanado();
 }
 
 gapi.hangout.data.onStateChanged.add(function(stateChangeEvent) {
