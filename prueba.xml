@@ -441,8 +441,8 @@ function ValidaLetra3(li){
 //
 function ValidaGanado(){
 	//Valida si el valor del contador es igual a la longitud de la palabra a adivinar para indicar que ya ganó y deneter el juego
-	
-	if(gapi.hangout.data.getValue('contadorBuenas') == gapi.hangout.data.getValue('respuesta').length){
+	alert("dentroValGanado: CL= "+gapi.hangout.data.getValue('contadorLetras'));
+	if(gapi.hangout.data.getValue('contadorLetras') == gapi.hangout.data.getValue('respuesta').length){
 		$("#ContenedorAbecedario").hide();
 		$("#resultado").show();
 		$("#resultado").html("Ganaste :)");
@@ -588,6 +588,16 @@ function aa(){
 		}
 		
 		if(indice.length == 1) {
+			var contaL= gapi.hangout.data.getValue('contadorLetras');
+			if(typeof contaL=="undefined"){
+				alert("contaL es undefined");
+				gapi.hangout.data.setValue("contadorLetras","0");
+			}else{
+			alert("Tiene valor y es: "parseInt(gapi.hangout.data.getValue('contadorLetras'));
+			var contL = parseInt(gapi.hangout.data.getValue('contadorLetras'));
+			contL++;
+			}
+			
 			ValidaLetra2(valor);
 		}
 	});
