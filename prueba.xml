@@ -428,7 +428,7 @@ function ValidaGanado(){
 	var contador=0;
 	var state2 = gapi.hangout.data.getState();
 	$.each(state2, function(indice,valor){
-		if(indice.length == 1) {	
+		if(indice.length <= 2) {	
 			keys.push(indice); 
 		}
 	});
