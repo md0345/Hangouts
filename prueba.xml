@@ -377,9 +377,7 @@ function ValidaLetra(li){
 	//Si la letra NO existe dentro de la palabra
 	else{
 		//Contador para sumar los intentos e ir pintando cada parte del monito ahorcado
-		var contadorM = parseInt(sessionStorage.getItem("contador")) + 1;
-		alert (contadorM);		
-		//var contadorM = parseInt(gapi.hangout.data.getValue('contadorMalas')) + 1;
+		var contadorM = parseInt(gapi.hangout.data.getValue('contadorMalas')) + 1;
 		sessionStorage.setItem("contador",contadorM);
 	  	gapi.hangout.data.setValue("contadorMalas", contadorM.toString());
 
@@ -435,7 +433,6 @@ function ValidaLetra3(li){
 	var contadorM = parseInt(gapi.hangout.data.getValue('contadorMalas')) + 1;
 	sessionStorage.setItem("contador",contadorM);
   	gapi.hangout.data.setValue("contadorMalas", contadorM.toString());
-	alert(contadorM);
 	//GAPI
 		gapi.hangout.data.setValue("err_"+letraIngresada,letraIngresada);
 	//
