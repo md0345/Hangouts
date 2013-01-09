@@ -577,7 +577,7 @@ function aa(){
 		}
 		
 		if(indice.length == 1) {	
-			ValidaLetra2(valor);
+			  setTimeout(ValidaLetra2(valor),2000);
 		}
 	});
 }
