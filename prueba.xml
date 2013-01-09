@@ -593,7 +593,7 @@ function aa(){
 				alert("contaL es undefined");
 				gapi.hangout.data.setValue("contadorLetras","0");
 			}else{
-			alert("Tiene valor y es: " +gapi.hangout.data.getValue('contadorLetras');
+			alert("Tiene valor y es: " +gapi.hangout.data.getValue('contadorLetras'));
 			var contL = parseInt(gapi.hangout.data.getValue('contadorLetras'));
 			contL++;
 			}
