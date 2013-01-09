@@ -441,8 +441,8 @@ function ValidaLetra3(li){
 //
 function ValidaGanado(){
 	//Valida si el valor del contador es igual a la longitud de la palabra a adivinar para indicar que ya ganó y deneter el juego
-
-	if(gapi.hangout.data.getValue('contadorBuenas') == window.longitud){
+	
+	if(gapi.hangout.data.getValue('contadorBuenas') == gapi.hangout.data.getValue('respuesta').length){
 		$("#ContenedorAbecedario").hide();
 		$("#resultado").show();
 		$("#resultado").html("Ganaste :)");
