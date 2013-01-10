@@ -249,8 +249,8 @@ h3{
     font: 15px Sans-serif;
 }
 </style>
- 
-      <script src="https://hangoutsapi.talkgadget.google.com/hangouts/_/api/hangout.js?v=1.2"></script> 
+  <script src="//talkgadget.google.com/hangouts/_/api/hangout.js?v=1.2"></script>
+      <!--<script src="https://hangoutsapi.talkgadget.google.com/hangouts/_/api/hangout.js?v=1.2"></script> -->
       <script type="text/javascript" src= "https://raw.github.com/CharlyMcFly/downloads/master/ahorcado2/js/jquery-1.7.1.min.js"></script>
       
       <script type="text/javascript">
@@ -260,19 +260,17 @@ function init(){
 	
 	var contaB= gapi.hangout.data.getValue('contadorBuenas');
 	var contaM= gapi.hangout.data.getValue('contadorMalas');
-	//alert("contaM"+contaM);
-	if(typeof contaB=="undefined"){
 	
+	if(typeof contaB=="undefined"){
 		gapi.hangout.data.setValue("contadorBuenas","0");
 	} else{
-	sessionStorage.setItem("palabra",parseInt(contaB));
+		sessionStorage.setItem("palabra",parseInt(contaB));
 	} 
 	if(typeof contaM=="undefined"){
-			gapi.hangout.data.setValue("contadorMalas","0");
+		gapi.hangout.data.setValue("contadorMalas","0");
 			
 	}else{
-
-  	sessionStorage.setItem("contador",parseInt(contaM));
+  		sessionStorage.setItem("contador",parseInt(contaM));
 	}
 	generaLetras();
 	setTimeout(CargaPreguntas,2000);
@@ -340,7 +338,6 @@ function myEventHandlers(){
 
 
 function ValidaLetra(li){
-//alert("ValidaLetra "+li);
 	//Recupero el valor de la letra que escribió el jugador
 	var letraIngresada = String(li);
 	
@@ -364,11 +361,11 @@ function ValidaLetra(li){
 		pos = resp.length;
 		for(i=0;i<pos;i++){
 			//Contador que se va incrementando conforme haya letras que existan en la palabra
-			var contPalabra = parseInt(sessionStorage.getItem("palabra")) + 1;
+			var contPalabra = parseInt(gapi.hangout.data.getValue('contadorBuenas')) + 1;
 			sessionStorage.setItem("palabra",contPalabra);
+			$("#l"+resp[i]).val(letraIngresada);
 			//GAPI
 			gapi.hangout.data.setValue("contadorBuenas",contPalabra.toString());
-			$("#l"+resp[i]).val(letraIngresada);
 			var eeee= (resp[i]).toString();
 			//GAPI
 			gapi.hangout.data.setValue(eeee,letraIngresada);
@@ -395,7 +392,7 @@ function ValidaLetra(li){
 
 
 function ValidaLetra2(li){
-//alert("Valida2")
+	//alert("Valida2")
 	//Recupero el valor de la letra que escribió el jugador
 	var letraIngresada = String(li);
 	
@@ -418,10 +415,6 @@ function ValidaLetra2(li){
 	if(resp != -1){
 		pos = resp.length;
 		for(i=0;i<pos;i++){
-			//Contador que se va incrementando conforme haya letras que existan en la palabra
-			var contPalabra = parseInt(sessionStorage.getItem("palabra")) + 1;
-			sessionStorage.setItem("palabra",contPalabra);
-
 			$("#l"+resp[i]).val(letraIngresada);
 			var eeee= (resp[i]).toString();
 			
@@ -429,28 +422,19 @@ function ValidaLetra2(li){
 		}	
 	}
 }
-function ValidaLetra3(li){
-alert("Valida3")
-		//Contador para sumar los intentos e ir pintando cada parte del monito ahorcado
-		var contadorM = parseInt(gapi.hangout.data.getValue('contadorMalas')) + 1;
-		sessionStorage.setItem("contador",contadorM);
-	  	gapi.hangout.data.setValue("contadorMalas", contadorM.toString());
-
-		//GAPI
-			gapi.hangout.data.setValue("err_"+letraIngresada,letraIngresada);
-		//
-		//alert(contadorM);
-		//Envío a todos los jugadores la letra que ingresaron
-		DibujaAhorcado(contadorM);
-}
-
-
-
-//
 function ValidaGanado(){
 	//Valida si el valor del contador es igual a la longitud de la palabra a adivinar para indicar que ya ganó y deneter el juego
-
-	if(gapi.hangout.data.getValue('contadorBuenas') == window.longitud){
+	var keys = [];
+	var contador=0;
+	var state2 = gapi.hangout.data.getState();
+	$.each(state2, function(indice,valor){
+		if(indice.length <= 2) {	
+			keys.push(indice); 
+		}
+	});
+	contador = keys.length;
+	
+	if(contador == gapi.hangout.data.getValue('respuesta').length){
 		$("#ContenedorAbecedario").hide();
 		$("#resultado").show();
 		$("#resultado").html("Ganaste :)");
@@ -463,29 +447,57 @@ function DibujaAhorcado(contador){
 		case 1: 
 			//dibuja la cabeza
 			$("#cabeza").show();
-			 gapi.hangout.data.setValue("monito","1");
+			if($("#cabeza").show().is(":visible") == false){
+				$("#cabeza").show();
+			}
+			gapi.hangout.data.setValue("monito","1");
 		break;
 		case 2: 
+			if($("#cabeza").show().is(":visible") == false){
+				$("#cabeza").show();
+			}
 			//dibuja el tronco
 			$("#tronco").show();
 			 gapi.hangout.data.setValue("monito","2");
 		break;
 		case 3:
+			if($("#cabeza").show().is(":visible") == false){
+				$("#cabeza").show();
+				$("#tronco").show();
+			}
 			//dibuja el brazo izquierdo
 			$("#brazoizquierdo").show();
 			 gapi.hangout.data.setValue("monito","3");
 		break;
 		case 4:
+			if($("#cabeza").show().is(":visible") == false){
+				$("#cabeza").show();
+				$("#tronco").show();
+				$("#brazoizquierdo").show();
+			}
 			//dibuja el brazo derecho
 			$("#brazoderecho").show();
 			 gapi.hangout.data.setValue("monito","4");
 		break;
 		case 5:
+			if($("#cabeza").show().is(":visible") == false){
+				$("#cabeza").show();
+				$("#tronco").show();
+				$("#brazoizquierdo").show();
+				$("#brazoderecho").show();
+			}
 			//dibuja la pierna izquierda
 			$("#pieizquierdo").show();
 			 gapi.hangout.data.setValue("monito","5");
 		break;
 		case 6:
+			if($("#cabeza").show().is(":visible") == false){
+				$("#cabeza").show();
+				$("#tronco").show();
+				$("#brazoizquierdo").show();
+				$("#brazoderecho").show();
+				$("#pieizquierdo").show();
+			}	
 			//dibuja la pierna derecha y pierde
 			$("#piederecho").show();
 			 gapi.hangout.data.setValue("monito","6");
@@ -506,74 +518,71 @@ function DibujaAhorcado(contador){
 
 function aa(){
 	var state = gapi.hangout.data.getState();
-	$.each(state,function(indice,valor){
-		//alert(indice);
-		//if(indice.length==5){
-		//	var letra = indice.substring(4);
-		////	$("#"+letra).addClass("Usado");
-			//ValidaLetra2(valor);
-		//}
-		if(indice=="monito"){
-			//alert("CM: "+valor);
+	$.each(state, function(indice,valor){
+		if (indice.match(/err.*/)) {
+	    		letra = valor;
+	    		$("#"+letra).addClass("Usado");
+	  	}
+		
+		
+		if(indice == "monito"){
 	
 			switch(valor){
-			case "1": 
-				//dibuja la cabeza
-				//alert("dibujo Cab?");
-				$("#cabeza").show();
-				//alert("Si Cab");
+				case "1": 
+					//dibuja la cabeza
+					$("#cabeza").show();
+					break;
+				case "2": 
+					//dibuja el tronco
+					$("#cabeza").show();
+					$("#tronco").show();
 				break;
-			case "2": 
-				//dibuja el tronco
-				$("#cabeza").show();
-				$("#tronco").show();
-			break;
-			case "3":
-				//dibuja el brazo izquierdo
-				$("#cabeza").show();
-				$("#tronco").show();
-				$("#brazoizquierdo").show();
-			break;
-			case "4":
-				//dibuja el brazo derecho
-				$("#cabeza").show();
-				$("#tronco").show();
-				$("#brazoizquierdo").show();
-				$("#brazoderecho").show();
-			break;
-			case "5":
-						$("#cabeza").show();
-				$("#tronco").show();
-				$("#brazoizquierdo").show();
-				$("#brazoderecho").show();
-				//dibuja la pierna izquierda
-				$("#pieizquierdo").show();
-				 
-			break;
-			case "6":
-				//dibuja la pierna derecha y pierde
-				$("#cabeza").show();
-				$("#tronco").show();
-				$("#brazoizquierdo").show();
-				$("#brazoderecho").show();
-				$("#pieizquierdo").show();
-				$("#piederecho").show();
-				$("#ContenedorAbecedario").hide();
-				$("#resultado").show();
-				$("#resultado").html("Perdiste :(");
-				var str = window.respuesta.split("");
-				for(i=0; i<window.longitud; i++){
-					$("#l"+i).val(str[i]);
-				}
-			break;
-			default: $("#monito").show();	
+				case "3":
+					//dibuja el brazo izquierdo
+					$("#cabeza").show();
+					$("#tronco").show();
+					$("#brazoizquierdo").show();
+				break;
+				case "4":
+					//dibuja el brazo derecho
+					$("#cabeza").show();
+					$("#tronco").show();
+					$("#brazoizquierdo").show();
+					$("#brazoderecho").show();
+				break;
+				case "5":
+					$("#cabeza").show();
+					$("#tronco").show();
+					$("#brazoizquierdo").show();
+					$("#brazoderecho").show();
+					//dibuja la pierna izquierda
+					$("#pieizquierdo").show();
+					 
+				break;
+				case "6":
+					//dibuja la pierna derecha y pierde
+					$("#cabeza").show();
+					$("#tronco").show();
+					$("#brazoizquierdo").show();
+					$("#brazoderecho").show();
+					$("#pieizquierdo").show();
+					$("#piederecho").show();
+					$("#ContenedorAbecedario").hide();
+					$("#resultado").show();
+					$("#resultado").html("Perdiste :(");
+					var str = window.respuesta.split("");
+					for(i=0; i<window.longitud; i++){
+						$("#l"+i).val(str[i]);
+					}
+				break;
+				default: $("#monito").show();	
+			}
 		}
-		}else{
-			ValidaLetra2(valor);
+		
+		if(indice.length == 1) {	
+			  setTimeout(ValidaLetra2(valor),2000);
 		}
 	});
-	//CargaPreguntas();
-	//ValidaGanado();
 }
 
 gapi.hangout.data.onStateChanged.add(function(stateChangeEvent) {
@@ -587,8 +596,7 @@ gapi.hangout.onAppVisible.add(function() {
 
 //document.addEventListener("DOMContentLoaded",init);
 gapi.hangout.onApiReady.add(function(){
-setTimeout(init,2000);
-
+	setTimeout(init,2000);
 }
  
 )
