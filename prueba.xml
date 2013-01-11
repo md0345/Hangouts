@@ -313,7 +313,7 @@ function CargaPreguntas(){
 				 		$("#Pregunta").apend(valor.pregunta);
 				 		gapi.hangout.data.setValue("pregunta",valor.pregunta);
 				 	});
-	    			});
+	    			}
 	 		});	
 		}else{
 			$.getJSON('http://metaversoeducativo.net/sisFH/msicu/php/servicioPreguntas.php', function(data) {
