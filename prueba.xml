@@ -297,6 +297,7 @@ function CargaPreguntas(){
 	    			success: function(){
 	    				var palabra = "";
 	    				$.each(data.temario, function(indice, valor) {
+	    					alert("indice: "+indice+", valor: "+valor);
 				   		window.respuesta = unescape(valor.respuesta);
 				   		window.longitud = respuesta.length;
 				   		//Genero los espacios en blanco de acuerdo al número de letras de la respuesta
