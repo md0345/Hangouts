@@ -296,8 +296,30 @@ var preg = gapi.hangout.data.getValue('pregunta');
 		if(typeof preg=="undefined"){
 		alert("dentroIF");
 		  if ( $.browser.msie ) {
-  alert( $.browser.version );
-}
+   $.getJSON('http://metaversoeducativo.net/sisFH/msicu/php/servicioPreguntasIE.php', function(data) {
+		 	alert("GETJSON");
+		 var palabra = "";
+		 
+		   	$.each(data.temario, function(indice, valor) {
+		   		alert("INDICE "+indice);
+		   			alert("valor "+valor);
+		   		alert("dentroIF");
+		   		window.respuesta = unescape(valor.respuesta);
+		   		window.longitud = respuesta.length;
+		   		//Genero los espacios en blanco de acuerdo al número de letras de la respuesta
+		 		for(i=0; i<longitud; i++){
+		 			palabra += "<span><input type='text' name='l"+i+"' id='l"+i+"'></span>" 
+		 		}
+		 		gapi.hangout.data.setValue("respuesta",valor.respuesta);
+		 		$("#Palabra").empty();
+		 		$("#Palabra").append(palabra);
+		 		gapi.hangout.data.setValue("palabra",palabra);
+		 		$("#Pregunta").empty();
+		 		$("#Pregunta").apend(valor.pregunta);
+		 		gapi.hangout.data.setValue("pregunta",valor.pregunta);
+		 		});
+		 		});
+}else{
 		 $.getJSON('http://metaversoeducativo.net/sisFH/msicu/php/servicioPreguntas.php', function(data) {
 		 	alert("GETJSON");
 		 var palabra = "";
@@ -321,6 +343,7 @@ var preg = gapi.hangout.data.getValue('pregunta');
 		 		gapi.hangout.data.setValue("pregunta",valor.pregunta);
 		 		});
 		 		});
+		 }
 		 }
 		 else{
 		 window.respuesta = gapi.hangout.data.getValue('respuesta');
