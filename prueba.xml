@@ -294,7 +294,7 @@ function CargaPreguntas(){
    			$.ajax({
 	   			url: 'http://metaversoeducativo.net/sisFH/msicu/php/servicioPreguntasIE.php',  		
 	    			type: 'json',
-	 		}).done(function(){
+	 		}).done(function(data){
 	    				alert("did it!");
 	    				var palabra = "";
 	    				$.each(data.temario, function(indice, valor) {
