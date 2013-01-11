@@ -303,7 +303,7 @@ function CargaPreguntas(){
 		 		$("#Palabra").append(palabra);
 		 		gapi.hangout.data.setValue("palabra",palabra);
 		 		$("#Pregunta").empty();
-		 		$("#Pregunta").html("<div id="Pregunta" class="Pregunta">"+valor.pregunta+"</div>");
+		 		$("#Pregunta").apend(valor.pregunta);
 		 		gapi.hangout.data.setValue("pregunta",valor.pregunta);
 		 		});
 		 		});
