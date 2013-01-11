@@ -290,6 +290,7 @@ function CargaPreguntas(){
 	if(typeof preg=="undefined"){
 	
 		if ( $.browser.msie ) {
+			alert("soy IE");
    			$.AJAX({
 	   			url: 'http://metaversoeducativo.net/sisFH/msicu/php/servicioPreguntas.php',  		
 	    			type: 'json',
