@@ -295,7 +295,7 @@ var preg = gapi.hangout.data.getValue('pregunta');
 		alert(preg);
 		if(typeof preg=="undefined"){
 		alert("dentroIF");
-		  alert( $.browser.version );
+		  alert( $.browser );
 		 $.getJSON('http://metaversoeducativo.net/sisFH/msicu/php/servicioPreguntas.php', function(data) {
 		 	alert("GETJSON");
 		 var palabra = "";
