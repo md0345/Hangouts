@@ -275,7 +275,8 @@ function init(){
   		sessionStorage.setItem("contador",parseInt(contaM));
 	}
 	generaLetras();
-	setTimeout(CargaPreguntas,2000);
+	//setTimeout(CargaPreguntas,1000);
+	CargaPreguntas()
 });
 }
 
