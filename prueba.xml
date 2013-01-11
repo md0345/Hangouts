@@ -294,7 +294,7 @@ try{	var preg = gapi.hangout.data.getValue('pregunta');
 		 		$("#Pregunta").append(gapi.hangout.data.getValue('pregunta'));
 		 		setTimeout(aa,2000);
 		 		}
-catch(){
+catch(e){
 
 
 		
