@@ -283,20 +283,13 @@ var respuesta = "";
 var longitud = 0;
 
 
+
 function CargaPreguntas(){
 	//Recupero una pregunta aleatoria de la BD 
-try{	var preg = gapi.hangout.data.getValue('pregunta');
-	 window.respuesta = gapi.hangout.data.getValue('respuesta');
-		 	window.longitud = respuesta.length;
-		 		$("#Palabra").empty();
-		 		$("#Palabra").append(gapi.hangout.data.getValue('palabra'));
-		 		$("#Pregunta").empty();
-		 		$("#Pregunta").append(gapi.hangout.data.getValue('pregunta'));
-		 		setTimeout(aa,2000);
-		 		}
-catch(e){
+	var preg = gapi.hangout.data.getValue('pregunta');
 
-
+		
+		if(typeof preg=="undefined"){
 		
 		 $.getJSON('http://metaversoeducativo.net/sisFH/msicu/php/servicioPreguntas.php', function(data) {
 		 var palabra = "";
@@ -316,9 +309,15 @@ catch(e){
 		 		gapi.hangout.data.setValue("pregunta",valor.pregunta);
 		 		});
 		 		});
-		 
-		
-	
+		 }
+		 else{
+		 window.respuesta = gapi.hangout.data.getValue('respuesta');
+		 	window.longitud = respuesta.length;
+		 		$("#Palabra").empty();
+		 		$("#Palabra").append(gapi.hangout.data.getValue('palabra'));
+		 		$("#Pregunta").empty();
+		 		$("#Pregunta").append(gapi.hangout.data.getValue('pregunta'));
+		 		setTimeout(aa,2000);
 		 }
 }
 		
