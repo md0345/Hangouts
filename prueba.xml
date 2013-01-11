@@ -292,9 +292,10 @@ function CargaPreguntas(){
 		if ( $.browser.msie ) {
 			alert("soy IE");
    			$.ajax({
+   				type: 'GET',
 	   			url: 'http://metaversoeducativo.net/sisFH/msicu/php/servicioPreguntasIE.php',  		
 	    			type: 'text',
-	    			success: function(data){
+	    			success: function(json){
 	    				alert(eval(data.indice+" : "+data.valor));
 	    				var palabra = "";
 	    				$.each(data.temario, function(indice, valor) {
