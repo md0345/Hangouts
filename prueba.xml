@@ -289,15 +289,20 @@ var longitud = 0;
 
 function CargaPreguntas(){
 	//Recupero una pregunta aleatoria de la BD 
-alert(gapi.hangout.data.getValue('pregunta'));
+
 var preg = gapi.hangout.data.getValue('pregunta');
 
 		alert(preg);
 		if(typeof preg=="undefined"){
 		alert("dentroIF");
 		 $.getJSON('http://metaversoeducativo.net/sisFH/msicu/php/servicioPreguntas.php', function(data) {
+		 	alert("GETJSON");
 		 var palabra = "";
+		 
 		   	$.each(data.temario, function(indice, valor) {
+		   		alert("INDICE "+indice);
+		   			alert("valor "+valor);
+		   		alert("dentroIF");
 		   		window.respuesta = unescape(valor.respuesta);
 		   		window.longitud = respuesta.length;
 		   		//Genero los espacios en blanco de acuerdo al número de letras de la respuesta
